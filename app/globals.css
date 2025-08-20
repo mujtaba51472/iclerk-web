@@ -9,11 +9,16 @@
   --color-primary-dark: #0f3a7b;
   --color-secondary: #501EFA;
   --color-tertiary: #1FCCE8;
-  --color-grey: #6a6b75;
+  --color-grey: #4a5568;
+  --color-background: #1F2937;  
+
+
 
   /* Text Colors */
   --color-text: #181A1F;
   --color-text-light: #4B5563;
+
+
 
   /* Background Colors */
   --color-bg: #ffffff;
@@ -21,6 +26,9 @@
   --color-bg-dark: #1e293b;
   --color-bg-card: #ffffff;
   --color-bg-hover: #f1f5f9;
+  --color-secondary-dark: #43609c;  
+  --color-light-grey:#d0d3d6;
+
 
   /* Border Colors */
   --color-border: #e2e8f0;
@@ -108,6 +116,7 @@
     margin-bottom: 1rem;
     line-height: 1.7;
   }
+
 
   /* === LINKS === */
   a {
@@ -221,7 +230,7 @@
 
   /* === LAYOUT COMPONENTS === */
   .container {
-    @apply !max-w-7xl !mx-auto !px-4;
+    @apply !max-w-[1600px] !mx-auto !px-4;
   }
   .container-sm {
     @apply !max-w-3xl !mx-auto !px-4;
@@ -233,15 +242,19 @@
 
   /* === BUTTON COMPONENTS === */
   .btn {
-    @apply  inline-flex  py-3 rounded-md font-medium no-underline transition-all duration-200 cursor-pointer border-0;
+    @apply  inline-flex px-4  py-2 rounded-md font-medium no-underline transition-all duration-200  cursor-pointer border-0;
   }
+
+
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark;
+    @apply bg-primary;
   }
 
+
+
   .btn-secondary {
-    @apply bg-secondary text-white hover:bg-orange-600;
+    @apply bg-secondary text-white hover:bg-secondary-dark;
   }
 
   .btn-outline {
@@ -255,6 +268,7 @@
   .btn-lg {
     @apply px-8 py-4 text-base;
   }
+  
 
   /* === CARD COMPONENTS === */
   .card {

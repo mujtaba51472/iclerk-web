@@ -2,11 +2,11 @@ import React from "react";
 
 const BannerHeading = ({ text, className }) => {
   return (
-    <div
-      className={`text-primary  text-lg md:text-3xl lg:text-5xl font-bold ${className}`}
+    <h1
+      className={`text-primary text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black  tracking-loose ${className}`}
     >
       {text}
-    </div>
+    </h1>
   );
 };
 

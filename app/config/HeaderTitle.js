@@ -15,8 +15,5 @@ export const headerTitles = [
     name: "About us",
     href: "/about",
   },
-  {
-    name: "Contact us",
-    href: "/contact",
-  },
+
 ];

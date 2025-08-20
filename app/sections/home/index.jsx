@@ -16,73 +16,92 @@ import TestimonialCards from "./CustomerReview";
 import { clients, home_data1, home_data2 } from "./data";
 import HomeLink from "./HomeLink";
 import HomeList from "./HomeList";
-import HomeParagraph from "./HomeParagraph";
-import HomeSectionHeading from "./HomeSectionHeading";
+import HomeParagraph from "../../components/shared/Paragraph";
+import HomeSectionHeading from "../../components/shared/Heading";
 import BannerHeading from "@/app/components/shared/BannerHeading";
 import BannerParagraph from "@/app/components/shared/BannerParagraph";
 import InterfaceComponent from "./InterfaceComponent";
+import BgWrapper from "@/app/components/shared/BgWrapper";
 
 const Home = () => {
   return (
     <>
-      <div className="pt-5 lg:pt-40 overflow-hidden h-[650px] relative">
+      <div className="pt-5  overflow-hidden h-[650px] relative">
         <div className="container px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
             <motion.div
-              variants={animateTextParent}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="place-content-center space-y-8 max-w-[500px] 2xl:max-w-[700px]"
+              // variants={animateTextParent}
+              // initial="hidden"
+              // whileInView="visible"
+              // viewport={{ once: true }}
+              className="place-content-center space-y-8 max-w-[700px]"
             >
               <motion.div variants={animateTextChild}>
-                <BannerHeading text="Secure & Contactless Payment acceptance." />
+                <BannerHeading text="Secure & Contactless Payment acceptance" />
               </motion.div>
 
               <motion.div variants={animateTextChild}>
                 <BannerParagraph text="Easy to use payment acceptance from your customer with no hardware required." />
               </motion.div>
               <motion.div variants={animateTextChild}>
-                <div className="pr-0 md:pr-4 lg:pr-0">
-                  <button className="flex cursor-pointer items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold bg-gradient-to-r from-white via-white to-[#1FCCE8] rounded-[75px] pr-6 py-5 w-full hover:shadow-lg transition-all duration-300 group">
+                <div className="pr-0 md:pr-4 lg:pr-0 max-w-[500px]">
+                  <button
+                    className="flex cursor-pointer items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold rounded-[75px]  py-5 w-full hover:shadow-lg transition-all duration-300 group"
+                    style={{
+                      background:
+                        "linear-gradient(270deg, #1FCCE8 4.04%, rgba(255, 255, 255, 0) 84.39%)",
+                    }}
+                  >
+                    {" "}
                     <span className="text-primary font-bold px-2">
                       Book a Demo
                     </span>
-
                     <Image
                       src="/assets/home/home1.png"
                       alt="Arrow Right"
                       width={40}
                       height={40}
-                      className="animate-pulse"
+                      className="animate-pulse mx-2"
                     />
                   </button>
                 </div>
               </motion.div>
             </motion.div>
-            
-            {/* Fixed animation implementation */}
-            <motion.div 
-              className="xl:absolute top-10 right-0 h-full bg-tertiary p-10 flex items-center justify-center rounded-tl-[10rem]"
-              {...animateHomeBackgroundImage}
-            >
-              <motion.div {...animateHomeForegroundImage}>
-                <Image
-                  src="/assets/home/home3.png"
-                  alt="Home Foreground"
-                  width={600}
-                  height={500}
-                  className="w-full h-auto z-10"
-                />
-              </motion.div>
-            </motion.div>
+
+         
+
+        
           </div>
+          <motion.div
+  className="absolute top-0  hidden lg:block  -right-90 w-[60%] h-full overf" 
+  // {...animateHomeBackgroundImage}
+>
+  <motion.div
+  //  {...animateHomeForegroundImage}
+    className="relative w-full h-full">
+    <Image
+      src="/assets/home/home2.png"
+      alt="Home Background"
+      fill={true}
+      style={{ objectFit: 'cover' }} 
+      className="w-full z-10"
+    />
+    
+    <Image
+      src="/assets/home/home3.png"
+      alt="Home Foreground"
+      height={500}
+      width={500}
+      className="z-30 absolute top-14 left-4 w-[90%] h-[80%] object-contain drop-shadow-2xl"
+    />
+  </motion.div>
+</motion.div>
         </div>
       </div>
-      
-      <div className="bg-gray-200">
+
+      <BgWrapper>
         <ContainerWrapper>
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={animateTextParent}
             initial="hidden"
@@ -97,15 +116,20 @@ const Home = () => {
                 custom={index}
               >
                 <div className="bg-tertiary rounded-full p-3">
-                  <Image src={item.img} alt={item.title} width={30} height={25} />
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={30}
+                    height={25}
+                  />
                 </div>
                 <HomeParagraph text={item.title} />
               </motion.div>
             ))}
           </motion.div>
         </ContainerWrapper>
-      </div>
-      
+      </BgWrapper>
+
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="relative">
@@ -137,16 +161,16 @@ const Home = () => {
           </motion.div>
         </div>
       </ContainerWrapper>
-      
-      <div className="bg-gray-200">
+
+      <BgWrapper>
         <ContainerWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div 
+            <motion.div
               variants={animateTextParent}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="place-content-center space-y-4"
+              className="place-content-center space-y-4 "
             >
               <motion.div variants={animateTextChild}>
                 <HomeSectionHeading text="Branded QR Code in Your Customer location" />
@@ -162,7 +186,7 @@ const Home = () => {
                 </div>
               </motion.div>
             </motion.div>
-            
+
             <motion.div {...animateImage} className="justify-self-center">
               <Image
                 src="/assets/home/homeqr.png"
@@ -174,10 +198,10 @@ const Home = () => {
             </motion.div>
           </div>
         </ContainerWrapper>
-      </div>
-      
+      </BgWrapper>
+
       <ContainerWrapper>
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={animateTextParent}
           initial="hidden"
@@ -193,7 +217,10 @@ const Home = () => {
               className="rounded-md"
             />
           </motion.div>
-          <motion.div variants={animateTextChild} className="place-content-center space-y-4">
+          <motion.div
+            variants={animateTextChild}
+            className="place-content-center space-y-4"
+          >
             <HomeSectionHeading text="Intelligent in-car payment solutions" />
             <HomeParagraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
             <div className="space-y-2">
@@ -206,10 +233,11 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </ContainerWrapper>
-      
+
       <InterfaceComponent />
-      
-      <div className="py-10 lg:py-20">
+
+      <div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -234,10 +262,10 @@ const Home = () => {
           </Marquee>
         </motion.div>
       </div>
-      
-      <div className="bg-gray-200">
+
+      <BgWrapper>
         <ContainerWrapper>
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={animateTextParent}
             initial="hidden"
@@ -253,7 +281,10 @@ const Home = () => {
                 className="rounded-md"
               />
             </motion.div>
-            <motion.div variants={animateTextChild} className="place-content-center space-y-4">
+            <motion.div
+              variants={animateTextChild}
+              className="place-content-center space-y-4"
+            >
               <HomeSectionHeading text="Contactless Card Payment Terminal" />
               <HomeParagraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
               <div className="space-y-2">
@@ -266,17 +297,20 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </ContainerWrapper>
-      </div>
-      
+      </BgWrapper>
+
       <ContainerWrapper>
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={animateTextParent}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div variants={animateTextChild} className="place-content-center space-y-4">
+          <motion.div
+            variants={animateTextChild}
+            className="place-content-center space-y-4"
+          >
             <HomeSectionHeading text="Generate Automatic PayLink " />
             <HomeParagraph text="Send personalized payment links via SMS, email, or messaging apps. Customers can pay instantly without registration" />
             <div>
@@ -287,7 +321,10 @@ const Home = () => {
               <HomeLink text="Learn More" redirect="#" />
             </div>
           </motion.div>
-          <motion.div variants={animateTextChild} className="justify-self-center">
+          <motion.div
+            variants={animateTextChild}
+            className="justify-self-center"
+          >
             <Image
               src="/assets/home/paylink.webp"
               alt="Choose Us"
@@ -298,11 +335,11 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </ContainerWrapper>
-      
+
       <ContainerWrapper>
         <TestimonialCards />
       </ContainerWrapper>
-      
+
       <ContainerWrapper>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import SecondaryButton from './SecondaryButton'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='shadow-sm bg-white py-4 sticky top-0 z-50'>
+      <div className=' bg-white py-4 sticky top-0 z-50'>
         <div className='container mx-auto  flex justify-between items-center'>
           <div className='text-xl font-bold'>
             <Image
@@ -31,11 +32,14 @@ const Header = () => {
               <Link 
                 key={item.name} 
                 href={item.href} 
-                className='text-primary hover:text-primary-dark transition-colors duration-300'
+                className='text-primary  font-[600px] text-lg '
               >
                 {item.name}
               </Link>
             ))}
+           <SecondaryButton>
+            <Link href="/contact" className='text-white'>Contact Us</Link>
+           </SecondaryButton>
           </nav>
 
           {/* Mobile Menu Button - Visible only on mobile */}

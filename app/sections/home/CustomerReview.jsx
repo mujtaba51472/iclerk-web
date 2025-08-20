@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import HomeSectionHeading from './HomeSectionHeading';
-import HomeParagraph from './HomeParagraph';
+import HomeSectionHeading from '../../components/shared/Heading';
+import HomeParagraph from '../../components/shared/Paragraph';
 
 const testimonials = [
   {

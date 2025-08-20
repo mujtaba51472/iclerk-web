@@ -2,7 +2,7 @@ import React from 'react'
 
 const BannerParagraph = ({ text, className }) => {
   return (
-    <div className={`text-base md:text-lg lg:text-xl text-grey ${className}`}>
+    <div className={`max-w-[500px] text-base md:text-lg  tracking-loose text-primary ${className}`}>
       {text}
     </div>
   )

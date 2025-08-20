@@ -3,12 +3,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { home_data2 } from "./data";
 import { motion, AnimatePresence } from "framer-motion";
+import BgWrapper from "@/app/components/shared/BgWrapper";
 
 const InterfaceComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0); // default first item
 
   return (
-    <div className="bg-[#edeff2] py-10 lg:py-20">
+    <BgWrapper>
+
       <div className="container mx-auto px-4">
        <div className="py-10">
          <div className="text-sm text-center mb-5 font-semibold">
@@ -58,7 +60,7 @@ const InterfaceComponent = () => {
           <HomeImageDisplay data={home_data2[activeIndex]} index={activeIndex} />
         </div>
       </div>
-    </div>
+    </BgWrapper>
   );
 };
 
