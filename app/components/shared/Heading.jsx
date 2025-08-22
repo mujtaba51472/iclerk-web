@@ -1,11 +1,11 @@
 import React from 'react'
 
-const HomeSectionHeading = ({text , className}) => {
+const SectionHeading = ({text , className}) => {
   return (
-<div className={`text-primary  text-lg  lg:text-3xl  font-bold ${className}`}>
+<div className={`text-primary  text-lg  lg:text-4xl   font-bold ${className}`}>
     {text}
 </div>
   )
 }
 
-export default HomeSectionHeading
+export default SectionHeading

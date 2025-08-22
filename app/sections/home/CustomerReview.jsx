@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import HomeSectionHeading from '../../components/shared/Heading';
 import HomeParagraph from '../../components/shared/Paragraph';
+import SectionHeading from '../../components/shared/Heading';
 
 const testimonials = [
   {
@@ -13,28 +14,28 @@ const testimonials = [
     name: "Jane Cooper",
     role: "Marketing Coordinator",
     img: "/assets/home/review.png",
-    content: "Ask CDCR San Quintin State Prison 2008. We installed Purex dispensers throughout the prison to combat diseases .."
+    content: "Ask CDCR San Quintin State Prison 2008. We installed Purex dispensers throughout the prison to combat diseases…and it was a Roaring Success (as in Roaring Drunk) I mean we had Long lines of prisoners fist fighting to use them."
   },
   {
     id: 2,
     name: "John Smith",
     role: "Product Manager",
     img: "/assets/home/review.png",
-    content: "The implementation was seamless and the results exceeded our expectations."
+    content: "Ask CDCR San Quintin State Prison 2008. We installed Purex dispensers throughout the prison to combat diseases…and it was a Roaring Success (as in Roaring Drunk) I mean we had Long lines of prisoners fist fighting to use them."
   },
   {
     id: 3,
     name: "Sarah Johnson",
     role: "Operations Director",
     img: "/assets/home/review.png",
-    content: "Outstanding service and support. The platform is intuitive and has helped streamline our entire workflow process"
+    content: "Ask CDCR San Quintin State Prison 2008. We installed Purex dispensers throughout the prison to combat diseases…and it was a Roaring Success (as in Roaring Drunk) I mean we had Long lines of prisoners fist fighting to use them."
   },
   {
     id: 4,
     name: "Mike Davis",
     role: "CEO",
     img: "/assets/home/review.png",
-    content: "Game-changing solution for our business. The ROI was evident within weeks of implementation."
+    content: "Ask CDCR San Quintin State Prison 2008. We installed Purex dispensers throughout the prison to combat diseases…and it was a Roaring Success (as in Roaring Drunk) I mean we had Long lines of prisoners fist fighting to use them."
   }
 ];
 
@@ -55,15 +56,15 @@ const TestimonialCards = () => {
 
   return (
     <section className=" overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto my-20">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-16 space-y-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <HomeSectionHeading text="See what our customers are saying" />
+          <SectionHeading text="See what our customers are saying" />
           <HomeParagraph text="2,157 people have said how good we are" />
         </motion.div>
 
@@ -71,7 +72,7 @@ const TestimonialCards = () => {
         <div className="relative" style={{ perspective: '1200px' }}>
           {/* Desktop View - Show 2 cards */}
           <div className="hidden md:block">
-            <div className="grid grid-cols-2 gap-8 mx-auto">
+            <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto">
               {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, i) => (
                 <TestimonialCard key={testimonial.id} testimonial={testimonial} index={i} />
               ))}
@@ -80,7 +81,7 @@ const TestimonialCards = () => {
 
           {/* Mobile View - Show 1 card */}
           <div className="md:hidden">
-            <div className="max-w-md mx-auto">
+            <div className="max-w-sm mx-auto">
               <TestimonialCard testimonial={testimonials[currentIndex]} index={0} />
             </div>
           </div>
@@ -114,7 +115,7 @@ const TestimonialCards = () => {
               className={`relative p-3 rounded-full shadow-lg transition-all duration-300 text-white
                 ${currentIndex === testimonials.length - 2
                   ? "bg-gray-300 cursor-not-allowed opacity-60"
-                  : "bg-gradient-to-r from-purple-500 to-pink-600"
+                  : " bg-secondary "
                 }`}
               aria-label="Next testimonial"
             >
@@ -133,7 +134,7 @@ const TestimonialCard = ({ testimonial, index }) => {
 
   return (
     <motion.div
-      className="relative bg-white rounded-2xl p-8 h-full"
+      className="relative bg-white rounded-2xl p-8 h-full "
       style={{
         background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
         transformStyle: 'preserve-3d',
@@ -179,7 +180,7 @@ const TestimonialCard = ({ testimonial, index }) => {
       </div>
 
       {/* Testimonial Content */}
-      <p className="text-gray-700 leading-relaxed text-base">
+      <p className="text-black leading-relaxed text-base">
         "{testimonial.content}"
       </p>
 

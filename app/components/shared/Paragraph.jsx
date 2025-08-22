@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HomeParagraph = ({text , className}) => {
+const Paragraph = ({text , className}) => {
   return (
-    <div className={`text-grey text-lg tracking-loose ${className}`}>{text}</div>
+    <div className={`text-grey text-[20px] tracking-loose ${className}`}>{text}</div>
   )
 }
 
-export default HomeParagraph
+export default Paragraph

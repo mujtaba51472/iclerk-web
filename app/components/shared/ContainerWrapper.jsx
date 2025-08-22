@@ -1,4 +1,4 @@
-const ContainerWrapper = ({ children }) => {
-  return <div className="container py-10">{children}</div>;
+const ContainerWrapper = ({ children, className }) => {
+  return <div className={`container ${className}`}>{children}</div>;
 };
 export default ContainerWrapper;

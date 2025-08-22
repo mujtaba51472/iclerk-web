@@ -4,6 +4,7 @@ import Image from "next/image";
 import { home_data2 } from "./data";
 import { motion, AnimatePresence } from "framer-motion";
 import BgWrapper from "@/app/components/shared/BgWrapper";
+import BannerHeading from "@/app/components/shared/BannerHeading";
 
 const InterfaceComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0); // default first item
@@ -11,14 +12,16 @@ const InterfaceComponent = () => {
   return (
     <BgWrapper>
 
-      <div className="container mx-auto px-4">
-       <div className="py-10">
+      <div className="container mx-auto px-4 pb-10">
+       <div className="py-10 max-w-3xl mx-auto">
          <div className="text-sm text-center mb-5 font-semibold">
           130+ CUSTOMERS
         </div>
-        <h2 className="text-center text-2xl md:text-4xl font-bold text-primary">
+        {/* <h2 className="text-center text-2xl md:text-4xl font-bold text-primary">
           A smart interface and strong backend control
-        </h2>
+        </h2> */}
+        <BannerHeading text="A smart interface and strong backend control" className="text-center" />
+
        </div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-10">
