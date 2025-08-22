@@ -33,7 +33,7 @@ const Header = () => {
             {headerTitles.map((item) => (
               <Link
                 href={item.href}
-                className="relative no-underline text-primary font-semibold hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+                className="relative no-underline text-primary font-medium hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
               >
                 <span
                   className={`${

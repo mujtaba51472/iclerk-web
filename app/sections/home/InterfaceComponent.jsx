@@ -17,22 +17,21 @@ const InterfaceComponent = () => {
          <div className="text-sm text-center mb-5 font-semibold">
           130+ CUSTOMERS
         </div>
-        {/* <h2 className="text-center text-2xl md:text-4xl font-bold text-primary">
-          A smart interface and strong backend control
-        </h2> */}
-        <BannerHeading text="A smart interface and strong backend control" className="text-center" />
+        <div className="text-center text-2xl md:text-4xl font-bold text-primary">
+          A smart interface <br /> and strong backend control
+        </div>
 
        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-10">
+        <div className="grid md:grid-cols-3 gap-8 mt-10 bg-transparent py-5">
           {/* LEFT SIDE LIST */}
-          <div className="flex flex-col space-y-10">
+          <div className="flex flex-col space-y-10 ">
             {home_data2.map((item, index) => (
               <div
                 key={index}
                 onClick={() => setActiveIndex(index)} 
                 // onMouseEnter={() => setActiveIndex(index)} // 👈 set on hover
-                className={`flex items-start space-x-4 hover:shadow-xl p-2 rounded-md  transition-all cursor-pointer ${
+                className={`max-w-sm flex items-start space-x-4 hover:shadow-xl p-2 rounded-md  transition-all cursor-pointer ${
                   activeIndex === index ? " shadow-lg " : ""
                 }`}
               >

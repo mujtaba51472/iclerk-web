@@ -24,24 +24,40 @@ import SectionHeading from "../../components/shared/Heading";
 const Home = () => {
   return (
     <>
-      <div className="pt-5  overflow-hidden h-[650px] relative">
-        <div className="container px-4">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 ">
-            <div className="place-content-center space-y-8 max-w-[700px] lg:pt-28">
-              <div>
-                <BannerHeading text="Secure & Contactless Payment acceptance" />
+      <div
+        className={`bg-[url('/assets/home/homebg.png')]
+        } relative  bg-no-repeat bg-cover max-w-full bg-center    relative min-h-[655px] flex items-center z-10 `}
+      >
+        <div className="container !px-4">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  relative z-10">
+            <div className="place-content-center space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">
+              <div className={`text-primary font-bold text-3xl sm:text-3xl lg:text-[50px] xl:[64px]  sm:leading-[1.3] lg:leading-[120%] `}>
+                Secure & <br/> Contactless Payment acceptance
               </div>
 
-              <div variants={animateTextChild}>
+              <div>
                 <BannerParagraph text="Easy to use payment acceptance from your customer with no hardware required." />
               </div>
-              <div variants={animateTextChild}>
+               <div className="   xl:hidden">
+              <Image
+                src="/assets/home/home3.webp"
+                alt="Background Image"
+                width={400}
+                height={500}
+                className=""
+              />
+            </div>
+              <div>
                 <div className="pr-0 md:pr-4 lg:pr-0 max-w-[500px]">
                   <button
-                    className="flex cursor-pointer items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold rounded-[75px]  py-5 w-full hover:shadow-lg transition-all duration-300 group"
+                    className=" py-3 lg:py-5 flex cursor-pointer items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold rounded-[75px]  py-5 w-full hover:shadow-lg transition-all duration-300 group"
                     style={{
                       background:
-                        "linear-gradient(270deg, #1FCCE8 4.04%, rgba(255, 255, 255, 0) 84.39%)",
+                        "linear-gradient(270deg, hsla(188, 81%, 52%, 1) 4.04%, hsla(0, 0%, 100%, 0) 84.39%)",
+                      border: "none",
+                      color: "#fff",
+                      cursor: "pointer",
+                      borderRadius: "75px",
                     }}
                   >
                     {" "}
@@ -59,34 +75,24 @@ const Home = () => {
                 </div>
               </div>
             </div>
+           
           </div>
-          <div className="absolute top-0  hidden lg:block  -right-80 w-[60%] h-full overflow-hidden">
-            <div className="relative w-full h-full">
-              <Image
-                src="/assets/home/home2.webp"
-                alt="Home Background"
-                fill={true}
-                style={{ objectFit: "cover" }}
-                className="w-full z-10"
-              />
-
-              {/* <Image
-                src="/assets/home/home3.webp"
-                alt="Home Foreground"
-                height={500}
-                width={700}
-                className="z-30 absolute top-14 left-4 w-[100%] h-[80%] object-contain"
-              /> */}
-            </div>
-          </div>
+        </div>
+        <div className="absolute top-0 right-0 hidden xl:block  lg:pt-10">
+          <Image
+            src="/assets/home/home3.webp"
+            alt="Background Image"
+            width={750}
+            height={500}
+            className=""
+          />
         </div>
       </div>
 
       <BgWrapper>
-        <ContainerWrapper >
+        <ContainerWrapper>
           <div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 lg:py-14"
-
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 py-14"
             viewport={{ once: true }}
           >
             {home_data1.map((item, index) => (
@@ -113,9 +119,9 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-        <ContainerWrapper  >
+      <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28">
-          <div className="relative">
+          <div className="relative place-content-center ">
             <div {...animateImage}>
               <Image
                 src="/assets/home/chooseus.png"
@@ -125,12 +131,12 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className="place-content-center max-w-[500px] space-y-8">
-              <div className={`text-primary  text-lg  lg:text-4xl   font-bold `}>
-                Why Choose <br /> iClerk?
-                            </div>
+          <div className="place-content-center justify-self-end max-w-[450px] space-y-8">
+            <div className={`text-primary  text-lg  lg:text-4xl   font-bold `}>
+              Why Choose <br /> iClerk?
+            </div>
 
-              <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
+            <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
             <div className="mt-5">
               <HomeLink text="Learn More" redirect="#" />
             </div>
@@ -139,12 +145,12 @@ const Home = () => {
       </ContainerWrapper>
 
       <BgWrapper>
-        <ContainerWrapper >
+        <ContainerWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
             <div className="place-content-center space-y-8 max-w-[550px] ">
-                <SectionHeading text="Branded QR Code in Your Customer location" />
-                <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
-              <div className="space-y-2">
+              <SectionHeading text="Branded QR Code in Your Customer location" />
+              <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
+              <div className="space-y-4">
                 <HomeList text="Compatible with all major browsers" />
                 <HomeList text="Fully integrated with iCabbi dispatch system" />
                 <div className="mt-5">
@@ -153,11 +159,11 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="">
+            <div className="justify-self-end">
               <Image
                 src="/assets/home/homeqr.png"
                 alt="Choose Us"
-            width={550}
+                width={550}
                 height={600}
                 className=""
               />
@@ -166,7 +172,7 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-        <ContainerWrapper >
+      <ContainerWrapper>
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28"
           viewport={{ once: true }}
@@ -180,12 +186,12 @@ const Home = () => {
               className=""
             />
           </div>
-          <div className="place-content-center space-y-8 max-w-[550px] ">
+          <div className="place-content-center space-y-8 max-w-[550px] justify-self-end ">
             <div className="max-w-[500px]  space-y-8">
               <SectionHeading text="Intelligent in-car payment solutions" />
               <Paragraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-4">
               <HomeList text="Lorem Ipsum has been the industry " />
               <HomeList text="Standard dummy text ever since the" />
             </div>
@@ -198,8 +204,8 @@ const Home = () => {
 
       <InterfaceComponent />
 
-      <div className="my-32 ">
-        <div className="text-center text-primary text-lg font-bold mb-4 capitalized">
+      <ContainerWrapper className="my-32 ">
+        <div className="text-center text-primary text-lg font-bold mb-4 capitalized shadow-x-lg">
           Trusted by the world's leading businesses
         </div>
         <div
@@ -208,23 +214,27 @@ const Home = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Marquee pauseOnHover={true} speed={50} className="cursor-pointer">
-            {clients.map((client, index) => (
-              <div key={index} className="mx-10">
-                <Image src={client} alt="home image" width={150} height={100} />
-              </div>
-            ))}
-          </Marquee>
+<Marquee
+  gradient={true}
+  gradientWidth={100}              // controls fade area
+  gradientColor={[249, 250, 251]}  // background color in RGB (this matches Tailwind bg-gray-50)
+  pauseOnHover={true}
+  speed={50}
+  className="cursor-pointer"
+>
+  {clients.map((client, index) => (
+    <div key={index} className="mx-10">
+      <Image src={client} alt="home image" width={150} height={100} />
+    </div>
+  ))}
+</Marquee>
         </div>
-      </div>
+      </ContainerWrapper>
 
       <BgWrapper>
-        <ContainerWrapper >
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10"
-     
-          >
-            <div >
+        <ContainerWrapper>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
+            <div>
               <Image
                 src="/assets/home/payterminal.webp"
                 alt="payment solution"
@@ -233,16 +243,13 @@ const Home = () => {
                 className=""
               />
             </div>
-            <div
-              className="place-content-center space-y-8"
-            >
-                           <div className="max-w-[500px]  space-y-8">
-
-              <SectionHeading text="Contactless Card Payment Terminal" />
-              <Paragraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
+            <div className="place-content-center space-y-8 justify-self-end ">
+              <div className="max-w-[500px]  space-y-8">
+                <SectionHeading text="Contactless Card Payment Terminal" />
+                <Paragraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
               </div>
-              
-              <div className="space-y-2">
+
+              <div className="space-y-4">
                 <HomeList text="Lorem Ipsum has been the industry  " />
                 <HomeList text="Standard dummy text ever since the" />
               </div>
@@ -254,14 +261,9 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-        <ContainerWrapper >
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28"
-  
-        >
-          <div
-            className="place-content-center space-y-8 max-w-[500px]"
-          >
+      <ContainerWrapper>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28">
+          <div className="place-content-center space-y-8 max-w-[500px]">
             <SectionHeading text="Generate Automatic PayLink " />
             <Paragraph text="Send personalized payment links via SMS, email, or messaging apps. Customers can pay instantly without registration" />
             <div className="space-y-2">
@@ -272,11 +274,11 @@ const Home = () => {
               <HomeLink text="Learn More" redirect="#" />
             </div>
           </div>
-          <div variants={animateTextChild} className="justify-self-center">
+          <div variants={animateTextChild} className="justify-self-end">
             <Image
               src="/assets/home/paylink.webp"
               alt="Choose Us"
-              width={400}
+              width={500}
               height={300}
               className="max-h-[400px] rounded-md"
             />

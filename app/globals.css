@@ -139,8 +139,9 @@
   /* === LAYOUT COMPONENTS === */
   
 
+  
   .container {
-    @apply !max-w-[1500px] !mx-auto !px-4;
+    @apply !max-w-[1600px] !mx-auto !px-4;
   }
   .container-sm {
     @apply !max-w-3xl !mx-auto !px-4;

@@ -32,11 +32,12 @@ export const home_data1= [
         title: "You will not be locked into any binding contracts or monthly fees.",
     },
     {
-        img: "/assets/home/logos/map.png",
+        img: "/assets/home/logos/business.png",
         title: "Cost Effective and flexible rates.",
     },
     {
-        img: "/assets/home/logos/business.png",
+                img: "/assets/home/logos/map.png",
+
         title: "Setup tailored made for your business",
     },
 ]
