@@ -2,7 +2,7 @@ import React from 'react'
 
 const Paragraph = ({text , className}) => {
   return (
-    <div className={`text-grey text-[20px] tracking-loose ${className}`}>{text}</div>
+    <div className={`text-grey text-base lg:text-[18px]  ${className}`}>{text}</div>
   )
 }
 

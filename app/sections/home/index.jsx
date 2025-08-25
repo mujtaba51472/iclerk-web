@@ -120,7 +120,7 @@ const Home = () => {
       </BgWrapper>
 
 <ContainerWrapper>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-36">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-36">
     <div className="relative place-content-center">
       <div className="relative">
         <div className=" hidden lg:block absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
@@ -135,12 +135,13 @@ const Home = () => {
              }}>
         </div>
         
-        <div>
+        <div className="">
           <Image
             src="/assets/home/chooseus.png"
             alt="Choose Us"
-            width={500}
+            width={600}
             height={600}
+            className=""
           />
         </div>
       </div>
@@ -162,8 +163,8 @@ const Home = () => {
 
       <BgWrapper>
         <ContainerWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
-            <div className="place-content-center space-y-8 max-w-[550px] ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
+            <div className="place-content-center space-y-8 max-w-[500px] ">
               <SectionHeading text="Branded QR Code in Your Customer location" />
               <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
               <div className="space-y-4">
@@ -179,9 +180,8 @@ const Home = () => {
               <Image
                 src="/assets/home/homeqr.png"
                 alt="Choose Us"
-                width={550}
+                width={600}
                 height={600}
-                className=""
               />
             </div>
           </div>
@@ -190,14 +190,14 @@ const Home = () => {
 
       <ContainerWrapper>
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-28"
           viewport={{ once: true }}
         >
           <div>
             <Image
               src="/assets/home/paysol.webp"
               alt="payment solution"
-              width={500}
+              width={600}
               height={500}
               className=""
             />
@@ -250,12 +250,12 @@ const Home = () => {
 
       <BgWrapper>
         <ContainerWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
             <div>
               <Image
                 src="/assets/home/payterminal.webp"
                 alt="payment solution"
-                width={500}
+                width={600}
                 height={500}
                 className=""
               />
@@ -279,7 +279,7 @@ const Home = () => {
       </BgWrapper>
 
       <ContainerWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-28">
           <div className="place-content-center space-y-8 max-w-[500px]">
             <SectionHeading text="Generate Automatic PayLink " />
             <Paragraph text="Send personalized payment links via SMS, email, or messaging apps. Customers can pay instantly without registration" />
@@ -295,7 +295,7 @@ const Home = () => {
             <Image
               src="/assets/home/paylink.webp"
               alt="Choose Us"
-              width={500}
+              width={600}
               height={300}
               className="max-h-[400px] rounded-md"
             />
