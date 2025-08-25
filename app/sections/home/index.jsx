@@ -122,14 +122,14 @@ const Home = () => {
 <ContainerWrapper>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-36">
     <div className="relative place-content-center">
-      <div className="relative overflow- flex items-center justify-center">
-        <div className=" hidden lg:block absolute -top-10 left-20 w-60 h-60 opacity-100 -z-10 blur-[50px]"
+      <div className="relative">
+        <div className=" hidden lg:block absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
              style={{
                background: 'radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)'
              }}>
         </div>
 
-        <div className="hidden lg:block absolute -bottom-5 -right-5 w-60 h-60 opacity-50 -z-10 blur-[50px]"
+        <div className="hidden lg:block absolute -bottom-5 right-30 w-60 h-60 opacity-50 -z-10 blur-[50px]"
              style={{
                background: 'radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)'
              }}>
