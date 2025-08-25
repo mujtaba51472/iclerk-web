@@ -26,27 +26,29 @@ const Home = () => {
     <>
       <div
         className={`bg-[url('/assets/home/homebg.png')]
-        } relative  bg-no-repeat bg-cover max-w-full bg-center    relative min-h-[655px] flex items-center z-10 `}
+        } relative  bg-no-repeat bg-cover max-w-full bg-center    relative min-h-[640px] flex items-center z-10 `}
       >
         <div className="container !px-4">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  relative z-10">
-            <div className="place-content-center space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">
-              <div className={`text-primary font-bold text-3xl sm:text-3xl lg:text-[50px] xl:[64px]  sm:leading-[1.3] lg:leading-[120%] `}>
-                Secure & <br/> Contactless Payment acceptance
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">
+              <div
+                className={`text-primary font-bold text-3xl sm:text-3xl lg:text-[50px] xl:[64px]  sm:leading-[1.3] lg:leading-[120%] `}
+              >
+                Secure & <br /> Contactless Payment acceptance
               </div>
 
               <div>
                 <BannerParagraph text="Easy to use payment acceptance from your customer with no hardware required." />
               </div>
-               <div className="   xl:hidden">
-              <Image
-                src="/assets/home/home3.webp"
-                alt="Background Image"
-                width={400}
-                height={500}
-                className=""
-              />
-            </div>
+              <div className="   xl:hidden">
+                <Image
+                  src="/assets/home/home3.webp"
+                  alt="Background Image"
+                  width={400}
+                  height={500}
+                  className=""
+                />
+              </div>
               <div>
                 <div className="pr-0 md:pr-4 lg:pr-0 max-w-[500px]">
                   <button
@@ -75,7 +77,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-           
           </div>
         </div>
         <div className="absolute top-0 right-0 hidden xl:block  lg:pt-10">
@@ -83,7 +84,7 @@ const Home = () => {
             src="/assets/home/home3.webp"
             alt="Background Image"
             width={750}
-            height={500}
+            height={700}
             className=""
           />
         </div>
@@ -92,22 +93,22 @@ const Home = () => {
       <BgWrapper>
         <ContainerWrapper>
           <div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 py-14"
+            className="flex items-center justify-between flex-wrap  py-8"
             viewport={{ once: true }}
           >
             {home_data1.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start   space-x-4"
+                className="flex items-start  space-x-4 "
                 variants={animateTextChild}
                 custom={index}
               >
-                <div className="bg-tertiary rounded-full p-3">
+                <div className="bg-tertiary rounded-full p-4">
                   <Image
                     src={item.img}
                     alt={item.title}
-                    width={30}
-                    height={30}
+                    width={25}
+                    height={25}
                   />
                 </div>
                 <div className="max-w-[300px] pt-2 ">
@@ -119,52 +120,56 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-<ContainerWrapper>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-36">
-    <div className="relative place-content-center">
-      <div className="relative">
-        <div className=" hidden lg:block absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
-             style={{
-               background: 'radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)'
-             }}>
-        </div>
+      <ContainerWrapper>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-36">
+          <div className="relative place-content-center">
+            <div className="relative">
+              <div
+                className=" hidden lg:block absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
+                }}
+              ></div>
 
-        <div className="hidden lg:block absolute -bottom-5 right-30 w-60 h-60 opacity-50 -z-10 blur-[50px]"
-             style={{
-               background: 'radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)'
-             }}>
+              <div
+                className="hidden lg:block absolute -bottom-5 right-0 w-60 h-60 opacity-60 -z-10 blur-[50px]"
+                style={{
+                  background:
+                    "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
+                }}
+              ></div>
+
+              <div className="">
+                <Image
+                  src="/assets/home/chooseus.png"
+                  alt="Choose Us"
+                width={550}
+                  height={600}
+                  className=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="place-content-center justify-self-end max-w-[450px] space-y-4 lg:space-y-8">
+            <div className="text-primary text-2xl lg:text-4xl font-bold">
+              Why Choose <br /> iClerk?
+            </div>
+
+            <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
+
+            <div className="mt-5">
+              <HomeLink text="Learn More" redirect="#" />
+            </div>
+          </div>
         </div>
-        
-        <div className="">
-          <Image
-            src="/assets/home/chooseus.png"
-            alt="Choose Us"
-            width={600}
-            height={600}
-            className=""
-          />
-        </div>
-      </div>
-    </div>
-    
-    <div className="place-content-center justify-self-end max-w-[450px] space-y-8">
-      <div className="text-primary text-2xl lg:text-4xl font-bold">
-        Why Choose <br /> iClerk?
-      </div>
-      
-      <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
-      
-      <div className="mt-5">
-        <HomeLink text="Learn More" redirect="#" />
-      </div>
-    </div>
-  </div>
-</ContainerWrapper>
+      </ContainerWrapper>
 
       <BgWrapper>
         <ContainerWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
-            <div className="place-content-center space-y-8 max-w-[500px] ">
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[500px] ">
               <SectionHeading text="Branded QR Code in Your Customer location" />
               <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
               <div className="space-y-4">
@@ -180,7 +185,7 @@ const Home = () => {
               <Image
                 src="/assets/home/homeqr.png"
                 alt="Choose Us"
-                width={600}
+              width={550}
                 height={600}
               />
             </div>
@@ -197,16 +202,14 @@ const Home = () => {
             <Image
               src="/assets/home/paysol.webp"
               alt="payment solution"
-              width={600}
+            width={550}
               height={500}
               className=""
             />
           </div>
-          <div className="place-content-center space-y-8 max-w-[550px] justify-self-end ">
-            <div className="max-w-[500px]  space-y-8">
+          <div className="place-content-center max-w-[500px] space-y-4 lg:space-y-8 max-w-[550px] justify-self-end ">
               <SectionHeading text="Intelligent in-car payment solutions" />
               <Paragraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
-            </div>
             <div className="space-y-4">
               <HomeList text="Lorem Ipsum has been the industry " />
               <HomeList text="Standard dummy text ever since the" />
@@ -224,27 +227,33 @@ const Home = () => {
         <div className="text-center text-primary text-lg font-bold mb-10 capitalized shadow-x-lg">
           Trusted by the world's leading businesses
         </div>
-        <div
-          className="overflow-hidden"
-        >
-<div className="relative overflow-hidden">
-  <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
+        <div className="overflow-hidden">
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
 
-  <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
 
-  <Marquee
-    gradient={false}              
-    pauseOnHover={true}
-    speed={50}
-    className="cursor-pointer "
-  >
-    {clients.map((client, index) => (
-      <div key={index} className="mx-10 hover:scale-125 transition-all duration-300">
-        <Image src={client} alt="home image" width={150} height={100} />
-      </div>
-    ))}
-  </Marquee>
-</div>
+            <Marquee
+              gradient={false}
+              pauseOnHover={true}
+              speed={50}
+              className="cursor-pointer "
+            >
+              {clients.map((client, index) => (
+                <div
+                  key={index}
+                  className="mx-10 hover:scale-125 transition-all duration-300"
+                >
+                  <Image
+                    src={client}
+                    alt="home image"
+                    width={150}
+                    height={100}
+                  />
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </div>
       </ContainerWrapper>
 
@@ -255,16 +264,14 @@ const Home = () => {
               <Image
                 src="/assets/home/payterminal.webp"
                 alt="payment solution"
-                width={600}
+              width={550}
                 height={500}
                 className=""
               />
             </div>
-            <div className="place-content-center space-y-8 justify-self-end ">
-              <div className="max-w-[500px]  space-y-8">
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[500px] justify-self-end ">
                 <SectionHeading text="Contactless Card Payment Terminal" />
                 <Paragraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code" />
-              </div>
 
               <div className="space-y-4">
                 <HomeList text="Lorem Ipsum has been the industry  " />
@@ -295,7 +302,7 @@ const Home = () => {
             <Image
               src="/assets/home/paylink.webp"
               alt="Choose Us"
-              width={600}
+            width={550}
               height={300}
               className="max-h-[400px] rounded-md"
             />
@@ -309,7 +316,7 @@ const Home = () => {
 
       <ContainerWrapper className={"mb-20"}>
         <div className="rounded-md overflow-hidden">
-          <div className="bg-[url('/assets/home/bghome1.webp')] rounded-md bg-cover bg-center bg-no-repeat min-h-[300px] flex items-center justify-center">
+          <div className="bg-[url('/assets/home/bghome1.webp')] rounded-md bg-cover bg-center bg-no-repeat min-h-[350px] flex items-center justify-center">
             <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-5xl mx-auto px-4">
               <SectionHeading
                 className="!text-white !uppercase"

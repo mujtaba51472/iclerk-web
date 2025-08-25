@@ -56,7 +56,7 @@ const TestimonialCards = () => {
 
   return (
     <section className=" overflow-hidden">
-      <div className="max-w-7xl mx-auto my-20">
+      <div className=" mx-auto my-20">
         <motion.div 
           className="text-center mb-16 space-y-8"
           initial={{ opacity: 0, y: 50 }}
@@ -68,9 +68,9 @@ const TestimonialCards = () => {
           <HomeParagraph text="2,157 people have said how good we are" />
         </motion.div>
 
-        <div className="relative  max-w-6xl " style={{ perspective: '1200px' }}>
+        <div className="relative    " style={{ perspective: '1200px' }}>
           <div className="hidden md:block">
-            <div className="grid grid-cols-2 gap-8 mx-auto">
+            <div className="grid grid-cols-2  gap-36 mx-auto">
               {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, i) => (
                 <TestimonialCard key={testimonial.id} testimonial={testimonial} index={i} />
               ))}
@@ -78,7 +78,7 @@ const TestimonialCards = () => {
           </div>
 
           <div className="md:hidden">
-            <div className="max-w-sm mx-auto">
+            <div className=" mx-auto">
               <TestimonialCard testimonial={testimonials[currentIndex]} index={0} />
             </div>
           </div>
@@ -96,7 +96,7 @@ const TestimonialCards = () => {
               className={`relative p-3 rounded-full shadow-lg transition-all duration-300 text-white
                 ${currentIndex === 0
                   ? "bg-gray-300 cursor-not-allowed opacity-60"
-                  : "bg-gradient-to-r from-blue-500 to-purple-600"
+                  : " bg-secondary "
                 }`}
               aria-label="Previous testimonial"
             >
@@ -127,11 +127,18 @@ const TestimonialCard = ({ testimonial, index }) => {
 
   return (
     <motion.div
-      className="relative bg-white rounded-2xl p-8 h-full "
+      className="relative bg-white rounded-2xl p-8 h-full bg-white"
       style={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-        transformStyle: 'preserve-3d',
-        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08)',
+        // transformStyle: 'preserve-3d',
+        boxShadow: `
+          0 20px 40px rgba(0, 0, 0, 0.1),
+          0 15px 25px rgba(0, 0, 0, 0.08),
+          0 8px 16px rgba(0, 0, 0, 0.06),
+          0 4px 6px rgba(0, 0, 0, 0.04),
+          0 2px 4px rgba(0, 0, 0, 0.02),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          inset 0 -1px 0 rgba(233, 207, 207, 0.02)
+        `,
       }}
       initial={{ 
         opacity: 0, 
@@ -147,39 +154,92 @@ const TestimonialCard = ({ testimonial, index }) => {
         rotateX: 0,
         scale: 1 
       }}
+      whileHover={{
+        // scale: 1.02,
+        // rotateY: tilt * 1.2,
+        rotateX: -2,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 20 }}
     >
-      <div className="flex items-start gap-4 mb-6">
-        <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 ring-2 ring-white shadow-md">
-          <Image
-            src={testimonial.img}
-            alt={testimonial.name}
-            width={64}
-            height={64}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="flex-1">
-          <h3 className="font-semibold text-gray-900 text-lg mb-1">
-            {testimonial.name}
-          </h3>
-          <p className="text-primary text-sm font-medium">
-            {testimonial.role}
-          </p>
-        </div>
-      </div>
-
-      <p className="text-black leading-relaxed text-base">
-        "{testimonial.content}"
-      </p>
-
+      {/* Enhanced 3D depth layer */}
       <div 
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
-          background: 'linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.03) 100%)',
-          transform: 'translateZ(-1px)',
+          background: 'linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.05) 100%)',
+          transform: 'translateZ(-2px) translateY(2px) translateX(1px)',
+          filter: 'blur(1px)',
+          opacity: 0.6,
+        }}
+      />
+      
+      {/* Subtle inner highlight */}
+      <div 
+        className="absolute inset-[1px] rounded-2xl pointer-events-none"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.02) 100%)',
+          transform: 'translateZ(1px)',
+        }}
+      />
+
+      <div className="relative z-10">
+        <div className="flex items-start gap-4 mb-6">
+          <div 
+            className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 ring-2 ring-white"
+            style={{
+              boxShadow: `
+                0 8px 16px rgba(0, 0, 0, 0.15),
+                0 4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8)
+              `
+            }}
+          >
+            <Image
+              src={testimonial.img}
+              alt={testimonial.name}
+              width={64}
+              height={64}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          <div className="flex-1">
+            <h3 
+              className="font-semibold text-gray-900 text-lg mb-1"
+              style={{
+                textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
+              }}
+            >
+              {testimonial.name}
+            </h3>
+            <p 
+              className="text-primary text-sm font-medium"
+              style={{
+                textShadow: '0 1px 1px rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              {testimonial.role}
+            </p>
+          </div>
+        </div>
+
+        <p 
+          className="text-black leading-relaxed text-base"
+          style={{
+            textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)'
+          }}
+        >
+          "{testimonial.content}"
+        </p>
+      </div>
+
+      {/* Edge highlight for 3D effect */}
+      <div 
+        className="absolute top-0 left-0 w-full h-[2px] rounded-t-2xl pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 100%)',
+          // transform: 'translateZ(2px)',
         }}
       />
     </motion.div>

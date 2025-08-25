@@ -31,7 +31,7 @@ const InterfaceComponent = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)} 
                 // onMouseEnter={() => setActiveIndex(index)} // 👈 set on hover
-                className={`max-w-[320px] flex items-start space-x-4 hover:shadow-xl p-2 mt-5 rounded-md  transition-all cursor-pointer ${
+                className={`max-w-[320px] flex items-start space-x-4 hover:shadow-xl p-2 lg:mt-10 rounded-md  transition-all cursor-pointer ${
                   activeIndex === index ? " shadow-lg " : ""
                 }`}
               >
