@@ -140,8 +140,9 @@
 
   
 
+  
   .container {
-    @apply !max-w-[1300px] !mx-auto !px-4;
+    @apply !max-w-[1250px] !mx-auto !px-4;
   }
   .container-sm {
     @apply !max-w-3xl !mx-auto !px-4;

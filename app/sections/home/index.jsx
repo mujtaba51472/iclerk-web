@@ -83,7 +83,7 @@ const Home = () => {
           <Image
             src="/assets/home/home3.webp"
             alt="Background Image"
-            width={750}
+            width={780}
             height={700}
             className=""
           />

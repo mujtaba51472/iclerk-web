@@ -127,123 +127,49 @@ const TestimonialCard = ({ testimonial, index }) => {
 
   return (
     <motion.div
-      className="relative bg-white rounded-2xl p-8 h-full bg-white"
-      style={{
-        // transformStyle: 'preserve-3d',
-        boxShadow: `
-          0 20px 40px rgba(0, 0, 0, 0.1),
-          0 15px 25px rgba(0, 0, 0, 0.08),
-          0 8px 16px rgba(0, 0, 0, 0.06),
-          0 4px 6px rgba(0, 0, 0, 0.04),
-          0 2px 4px rgba(0, 0, 0, 0.02),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9),
-          inset 0 -1px 0 rgba(233, 207, 207, 0.02)
-        `,
-      }}
-      initial={{ 
-        opacity: 0, 
-        y: 80, 
-        rotateY: tilt, 
-        rotateX: -5,
-        scale: 0.9 
-      }}
-      whileInView={{ 
-        opacity: 1, 
-        y: 0, 
-        rotateY: tilt, 
-        rotateX: 0,
-        scale: 1 
-      }}
-      whileHover={{
-        // scale: 1.02,
-        // rotateY: tilt * 1.2,
-        rotateX: -2,
-        transition: { duration: 0.3, ease: "easeOut" }
-      }}
+      className="relative bg-white rounded-2xl p-6 h-full shadow-3xl"
+      initial={{ opacity: 0, y: 80, rotateY: tilt, rotateX: -5, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, rotateY: tilt, rotateX: 0, scale: 1 }}
+  style={{ transformStyle: 'preserve-3d',   boxShadow: `
+          0 32px 64px -12px rgba(0, 0, 0, 0.12),
+          0 25px 45px -8px rgba(0, 0, 0, 0.08),
+          0 15px 25px -5px rgba(0, 0, 0, 0.06),
+          0 8px 12px -2px rgba(0, 0, 0, 0.04)
+        `,   }}
+    
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 20 }}
     >
-      {/* Enhanced 3D depth layer */}
-      <div 
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-        style={{
-          background: 'linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.05) 100%)',
-          transform: 'translateZ(-2px) translateY(2px) translateX(1px)',
-          filter: 'blur(1px)',
-          opacity: 0.6,
-        }}
-      />
-      
-      {/* Subtle inner highlight */}
-      <div 
-        className="absolute inset-[1px] rounded-2xl pointer-events-none"
-        style={{
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.02) 100%)',
-          transform: 'translateZ(1px)',
-        }}
-      />
-
-      <div className="relative z-10">
-        <div className="flex items-start gap-4 mb-6">
-          <div 
-            className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 ring-2 ring-white"
-            style={{
-              boxShadow: `
-                0 8px 16px rgba(0, 0, 0, 0.15),
-                0 4px 8px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8)
-              `
-            }}
-          >
-            <Image
-              src={testimonial.img}
-              alt={testimonial.name}
-              width={64}
-              height={64}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-          <div className="flex-1">
-            <h3 
-              className="font-semibold text-gray-900 text-lg mb-1"
-              style={{
-                textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
-              }}
-            >
-              {testimonial.name}
-            </h3>
-            <p 
-              className="text-primary text-sm font-medium"
-              style={{
-                textShadow: '0 1px 1px rgba(255, 255, 255, 0.6)'
-              }}
-            >
-              {testimonial.role}
-            </p>
-          </div>
+      <div className="flex items-center gap-4 mb-4">
+        {/* Avatar */}
+        <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 shadow-md">
+          <Image
+            src={testimonial.img}
+            alt={testimonial.name}
+            width={48}
+            height={48}
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        <p 
-          className="text-black leading-relaxed text-base"
-          style={{
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.5)'
-          }}
-        >
-          "{testimonial.content}"
-        </p>
+        {/* Name + Role */}
+        <div>
+          <h3 className="font-semibold text-gray-900 text-base">
+            {testimonial.name}
+          </h3>
+          <p className="text-secondary text-sm font-medium">
+            {testimonial.role}
+          </p>
+        </div>
       </div>
 
-      {/* Edge highlight for 3D effect */}
-      <div 
-        className="absolute top-0 left-0 w-full h-[2px] rounded-t-2xl pointer-events-none"
-        style={{
-          background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 100%)',
-          // transform: 'translateZ(2px)',
-        }}
-      />
+      {/* Testimonial Content */}
+      <p className="text-gray-700 leading-relaxed text-sm">
+        {testimonial.content}
+      </p>
     </motion.div>
   );
 };
+
 
 export default TestimonialCards;
