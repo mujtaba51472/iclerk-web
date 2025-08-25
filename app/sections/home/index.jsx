@@ -147,7 +147,7 @@ const Home = () => {
     </div>
     
     <div className="place-content-center justify-self-end max-w-[450px] space-y-8">
-      <div className="text-primary text-lg lg:text-4xl font-bold">
+      <div className="text-primary text-2xl lg:text-4xl font-bold">
         Why Choose <br /> iClerk?
       </div>
       
