@@ -141,7 +141,6 @@ const TestimonialCard = ({ testimonial, index }) => {
       transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 20 }}
     >
       <div className="flex items-center gap-4 mb-4">
-        {/* Avatar */}
         <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 shadow-md">
           <Image
             src={testimonial.img}
@@ -152,7 +151,6 @@ const TestimonialCard = ({ testimonial, index }) => {
           />
         </div>
 
-        {/* Name + Role */}
         <div>
           <h3 className="font-semibold text-gray-900 text-base">
             {testimonial.name}
@@ -163,7 +161,6 @@ const TestimonialCard = ({ testimonial, index }) => {
         </div>
       </div>
 
-      {/* Testimonial Content */}
       <p className="text-gray-700 leading-relaxed text-sm">
         {testimonial.content}
       </p>

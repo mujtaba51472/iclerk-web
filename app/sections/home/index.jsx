@@ -125,7 +125,7 @@ const Home = () => {
           <div className="relative place-content-center">
             <div className="relative">
               <div
-                className=" hidden lg:block absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
+                className="  absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
                 style={{
                   background:
                     "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
@@ -133,7 +133,7 @@ const Home = () => {
               ></div>
 
               <div
-                className="hidden lg:block absolute -bottom-5 right-0 w-60 h-60 opacity-60 -z-10 blur-[50px]"
+                className="absolute -bottom-5 right-0 w-60 h-60 opacity-60 -z-10 blur-[50px]"
                 style={{
                   background:
                     "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
