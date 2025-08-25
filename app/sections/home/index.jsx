@@ -119,30 +119,46 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-      <ContainerWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-28">
-          <div className="relative place-content-center ">
-            <div {...animateImage}>
-              <Image
-                src="/assets/home/chooseus.png"
-                alt="Choose Us"
-                width={500}
-                height={600}
-              />
-            </div>
-          </div>
-          <div className="place-content-center justify-self-end max-w-[450px] space-y-8">
-            <div className={`text-primary  text-lg  lg:text-4xl   font-bold `}>
-              Why Choose <br /> iClerk?
-            </div>
-
-            <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
-            <div className="mt-5">
-              <HomeLink text="Learn More" redirect="#" />
-            </div>
-          </div>
+<ContainerWrapper>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 lg:py-24 xl:py-36">
+    <div className="relative place-content-center">
+      <div className="relative overflow- flex items-center justify-center">
+        <div className=" hidden lg:block absolute -top-10 left-20 w-60 h-60 opacity-100 -z-10 blur-[50px]"
+             style={{
+               background: 'radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)'
+             }}>
         </div>
-      </ContainerWrapper>
+
+        <div className="hidden lg:block absolute -bottom-5 -right-5 w-60 h-60 opacity-50 -z-10 blur-[50px]"
+             style={{
+               background: 'radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)'
+             }}>
+        </div>
+        
+        <div>
+          <Image
+            src="/assets/home/chooseus.png"
+            alt="Choose Us"
+            width={500}
+            height={600}
+          />
+        </div>
+      </div>
+    </div>
+    
+    <div className="place-content-center justify-self-end max-w-[450px] space-y-8">
+      <div className="text-primary text-lg lg:text-4xl font-bold">
+        Why Choose <br /> iClerk?
+      </div>
+      
+      <Paragraph text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
+      
+      <div className="mt-5">
+        <HomeLink text="Learn More" redirect="#" />
+      </div>
+    </div>
+  </div>
+</ContainerWrapper>
 
       <BgWrapper>
         <ContainerWrapper>
@@ -205,29 +221,30 @@ const Home = () => {
       <InterfaceComponent />
 
       <ContainerWrapper className="my-32 ">
-        <div className="text-center text-primary text-lg font-bold mb-4 capitalized shadow-x-lg">
+        <div className="text-center text-primary text-lg font-bold mb-10 capitalized shadow-x-lg">
           Trusted by the world's leading businesses
         </div>
         <div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          className="overflow-hidden"
         >
-<Marquee
-  gradient={true}
-  gradientWidth={100}              // controls fade area
-  gradientColor={[249, 250, 251]}  // background color in RGB (this matches Tailwind bg-gray-50)
-  pauseOnHover={true}
-  speed={50}
-  className="cursor-pointer"
->
-  {clients.map((client, index) => (
-    <div key={index} className="mx-10">
-      <Image src={client} alt="home image" width={150} height={100} />
-    </div>
-  ))}
-</Marquee>
+<div className="relative overflow-hidden">
+  <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
+
+  <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-white via-white-10 to-transparent z-10 pointer-events-none"></div>
+
+  <Marquee
+    gradient={false}              
+    pauseOnHover={true}
+    speed={50}
+    className="cursor-pointer "
+  >
+    {clients.map((client, index) => (
+      <div key={index} className="mx-10 hover:scale-125 transition-all duration-300">
+        <Image src={client} alt="home image" width={150} height={100} />
+      </div>
+    ))}
+  </Marquee>
+</div>
         </div>
       </ContainerWrapper>
 

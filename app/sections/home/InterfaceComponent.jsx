@@ -7,7 +7,7 @@ import BgWrapper from "@/app/components/shared/BgWrapper";
 import BannerHeading from "@/app/components/shared/BannerHeading";
 
 const InterfaceComponent = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // default first item
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <BgWrapper>
@@ -31,7 +31,7 @@ const InterfaceComponent = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)} 
                 // onMouseEnter={() => setActiveIndex(index)} // 👈 set on hover
-                className={`max-w-sm flex items-start space-x-4 hover:shadow-xl p-2 rounded-md  transition-all cursor-pointer ${
+                className={`max-w-[320px] flex items-start space-x-4 hover:shadow-xl p-2 mt-5 rounded-md  transition-all cursor-pointer ${
                   activeIndex === index ? " shadow-lg " : ""
                 }`}
               >
@@ -69,7 +69,7 @@ const InterfaceComponent = () => {
 // ✅ IMAGE DISPLAY COMPONENT with animation
 const HomeImageDisplay = ({ data, index }) => {
   return (
-    <div className="relative col-span-2 min-h-[400px] rounded-lg overflow-hidden">
+    <div className="relative col-span-2 min-h-[670px]   overflow-hidden">
       <AnimatePresence mode="wait">
         {/* Background image */}
         <motion.div
@@ -78,7 +78,7 @@ const HomeImageDisplay = ({ data, index }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className=""
         >
           <Image
             src={data.img1}
@@ -95,7 +95,7 @@ const HomeImageDisplay = ({ data, index }) => {
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute top-[0%] right-0 z-10"
+          className="absolute top-[10%] right-0 z-10"
         >
           <Image src={data.img2} alt="Secondary" width={200} height={200} />
         </motion.div>

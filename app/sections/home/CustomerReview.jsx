@@ -68,25 +68,21 @@ const TestimonialCards = () => {
           <HomeParagraph text="2,157 people have said how good we are" />
         </motion.div>
 
-        {/* Testimonial Cards Container */}
-        <div className="relative" style={{ perspective: '1200px' }}>
-          {/* Desktop View - Show 2 cards */}
+        <div className="relative  max-w-6xl " style={{ perspective: '1200px' }}>
           <div className="hidden md:block">
-            <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 gap-8 mx-auto">
               {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, i) => (
                 <TestimonialCard key={testimonial.id} testimonial={testimonial} index={i} />
               ))}
             </div>
           </div>
 
-          {/* Mobile View - Show 1 card */}
           <div className="md:hidden">
             <div className="max-w-sm mx-auto">
               <TestimonialCard testimonial={testimonials[currentIndex]} index={0} />
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <motion.div 
             className="flex justify-end mt-8 gap-4"
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +90,6 @@ const TestimonialCards = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {/* Previous Button */}
             <motion.button
               onClick={prevSlide}
               disabled={currentIndex === 0}
@@ -108,7 +103,6 @@ const TestimonialCards = () => {
               <ChevronLeft size={20} className="relative z-10" />
             </motion.button>
 
-            {/* Next Button */}
             <motion.button
               onClick={nextSlide}
               disabled={currentIndex === testimonials.length - 2}
@@ -129,7 +123,6 @@ const TestimonialCards = () => {
 };
 
 const TestimonialCard = ({ testimonial, index }) => {
-  // Alternate tilt per card (left vs right)
   const tilt = index % 2 === 0 ? -6 : 6;
 
   return (
@@ -157,7 +150,6 @@ const TestimonialCard = ({ testimonial, index }) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 20 }}
     >
-      {/* Profile Section */}
       <div className="flex items-start gap-4 mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 ring-2 ring-white shadow-md">
           <Image
@@ -179,12 +171,10 @@ const TestimonialCard = ({ testimonial, index }) => {
         </div>
       </div>
 
-      {/* Testimonial Content */}
       <p className="text-black leading-relaxed text-base">
         "{testimonial.content}"
       </p>
 
-      {/* 3D overlay for depth */}
       <div 
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{

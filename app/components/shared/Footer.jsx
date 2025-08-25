@@ -4,11 +4,13 @@ import Link from "next/link";
 import { company } from "../../config/company";
 import { navigation } from "@/app/config/footerTitle";
 import { Facebook, Linkedin } from "lucide-react";
+import ContainerWrapper from "./ContainerWrapper";
 
 function Footer() {
   return (
+
     <footer className="bg-[url('/assets/footer.png')] bg-no-repeat bg-center relative w-full bg-cover py-10 pb-24 md:pb-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4  overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-8 ">
           {/* Logo and Social */}
           <div className="lg:col-span-1 mt-5">
@@ -91,13 +93,13 @@ function Footer() {
             <p className="mb-4 text-sm">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="grid grid-cols-1 gap-2">
               <input
                 type="email"
                 placeholder="Enter Your Email"
-                className="flex-1 px-4 py-2 bg-white  border border-gray-700 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="flex px-4 py-2 bg-white  rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               />
-              <button className="bg-primary  text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 whitespace-nowrap">
+              <button className="bg-secondary  text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 whitespace-nowrap">
                 Subscribe
               </button>
             </div>
