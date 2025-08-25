@@ -39,7 +39,7 @@ const Header = () => {
                 <span
                   className={`${
                     pathname == item?.href && "text-tertiary "
-                  } text-base font-bold`}
+                  } text-sm font-semibold`}
                 >
                   {item.name}
                 </span>
@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
             ))}
             <SecondaryButton>
-              <Link href="/contact" className="text-white">
+              <Link href="/contact" className="text-white text-sm font-semibold">
                 Contact Us
               </Link>
             </SecondaryButton>
