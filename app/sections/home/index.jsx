@@ -131,11 +131,11 @@ const Home = () => {
           background:
             "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
         }}
-        variants={fadeInGradient}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
-        transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
+        // variants={fadeInGradient}
+        // initial="hidden"
+        // whileInView="visible"
+        // viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
+        // transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
       />
 
       {/* Div 2 (opposite of Div 1) */}
@@ -145,11 +145,11 @@ const Home = () => {
           background:
             "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
         }}
-        variants={fadeInGradient}
-        initial="visible"   // opposite of Div1
-        whileInView="hidden" // hides when Div1 shows
-        viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
-        transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
+        // variants={fadeInGradient}
+        // initial="visible"   // opposite of Div1
+        // whileInView="hidden" // hides when Div1 shows
+        // viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
+        // transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
       />
 
               <div className="">
