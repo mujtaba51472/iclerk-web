@@ -9,7 +9,7 @@ import ContainerWrapper from "./ContainerWrapper";
 function Footer() {
   return (
 
-    <footer className="bg-[url('/assets/footer.png')] bg-no-repeat bg-center relative w-full bg-cover py-10 pb-24 md:pb-10">
+    <footer className="bg-[url('/assets/footer.png')] bg-no-repeat bg-center relative w-full bg-cover py-10 pb-24 md:pb-10 rounded-tl-3xl rounded-tr-3xl">
       <div className="container mx-auto px-4  overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-8 ">
           {/* Logo and Social */}
@@ -44,7 +44,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1"
+                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
                   >
                     {item.name}
                   </Link>

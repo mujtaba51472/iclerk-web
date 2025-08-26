@@ -224,7 +224,7 @@ const Home = () => {
       <InterfaceComponent />
 
       <ContainerWrapper className="my-32 ">
-        <div className="text-center text-primary text-lg font-bold mb-10 capitalized shadow-x-lg">
+        <div className="text-center  text-lg font-bold mb-10 capitalized shadow-x-lg text-gray-400">
           Trusted by the world's leading businesses
         </div>
         <div className="overflow-hidden">
@@ -247,7 +247,7 @@ const Home = () => {
                   <Image
                     src={client}
                     alt="home image"
-                    width={150}
+                    width={90}
                     height={100}
                   />
                 </div>
@@ -257,7 +257,6 @@ const Home = () => {
         </div>
       </ContainerWrapper>
 
-      <BgWrapper>
         <ContainerWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
             <div>
@@ -283,7 +282,8 @@ const Home = () => {
             </div>
           </div>
         </ContainerWrapper>
-      </BgWrapper>
+        <BgWrapper>
+
 
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-28">
@@ -309,15 +309,17 @@ const Home = () => {
           </div>
         </div>
       </ContainerWrapper>
+              </BgWrapper>
+
 
       <ContainerWrapper>
         <TestimonialCards />
       </ContainerWrapper>
 
-      <ContainerWrapper className={"mb-20"}>
+      <ContainerWrapper className="mb-20 ">
         <div className="rounded-md overflow-hidden">
-          <div className="bg-[url('/assets/home/bghome1.webp')] rounded-md bg-cover bg-center bg-no-repeat min-h-[350px] flex items-center justify-center">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-5xl mx-auto px-4">
+          <div className="bg-[url('/assets/home/bghome1.webp')] rounded-md bg-cover bg-center bg-no-repeat min-h-[450px]  flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-5xl mx-auto  ">
               <SectionHeading
                 className="!text-white !uppercase"
                 text="Start accepting payments online, in-store or remote in minutes"
@@ -326,7 +328,7 @@ const Home = () => {
                 className="!text-white !text-base"
                 text="Simple and transparent pricing plan give you access a complete payments and invoicing solutions."
               />
-              <button className="bg-white text-primary px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition">
+              <button className="bg-white text-primary px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition mb-5">
                 Contact us
               </button>
             </div>

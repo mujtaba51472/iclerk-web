@@ -55,7 +55,7 @@ const TestimonialCards = () => {
   };
 
   return (
-    <section className=" overflow-hidden">
+    <section className="">
       <div className=" mx-auto my-20">
         <motion.div 
           className="text-center mb-16 space-y-8"
@@ -130,12 +130,9 @@ const TestimonialCard = ({ testimonial, index }) => {
       className="relative bg-white rounded-2xl p-6 h-full shadow-3xl"
       initial={{ opacity: 0, y: 80, rotateY: tilt, rotateX: -5, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, rotateY: tilt, rotateX: 0, scale: 1 }}
-  style={{ transformStyle: 'preserve-3d',   boxShadow: `
-          0 32px 64px -12px rgba(0, 0, 0, 0.12),
-          0 25px 45px -8px rgba(0, 0, 0, 0.08),
-          0 15px 25px -5px rgba(0, 0, 0, 0.06),
-          0 8px 12px -2px rgba(0, 0, 0, 0.04)
-        `,   }}
+ style={{
+    boxShadow: "41px 38px 38.5px 5px rgba(0,0,0,0.23)"
+  }}
     
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 20 }}

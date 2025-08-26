@@ -22,7 +22,6 @@ export const clients =[
     "/assets/home/clients/5.png",
     "/assets/home/clients/6.png",
     "/assets/home/clients/7.png",
-    "/assets/home/clients/8.png",
 ]
 
 
