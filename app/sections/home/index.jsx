@@ -53,7 +53,7 @@ const Home = () => {
               <div>
                 <div className="pr-0 md:pr-4 lg:pr-0 max-w-[500px]">
                   <button
-                    className=" py-3 lg:py-5 flex cursor-pointer items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold rounded-[75px]  py-5 w-full hover:shadow-lg transition-all duration-300 group"
+                    className=" py-3 lg:py-6 flex cursor-pointer group items-center justify-between text-lg md:text-2xl lg:text-4xl font-bold rounded-[75px]  w-full shadow-2xl transition-all duration-300 group"
                     style={{
                       background:
                         "linear-gradient(270deg, hsla(188, 81%, 52%, 1) 4.04%, hsla(0, 0%, 100%, 0) 84.39%)",
@@ -64,7 +64,7 @@ const Home = () => {
                     }}
                   >
                     {" "}
-                    <span className="text-primary font-bold px-2">
+                    <span className="text-primary font-bold px-2 lg:px-6 group-hover:-translate-y-1 transition-all duration-300">
                       Book a Demo
                     </span>
                     <Image
@@ -72,7 +72,7 @@ const Home = () => {
                       alt="Arrow Right"
                       width={40}
                       height={40}
-                      className="animate-pulse mx-2"
+                      className=" mx-2 group-hover:translate-x-1 group-hover:scale-125 transition-all duration-300"
                     />
                   </button>
                 </div>
@@ -100,11 +100,11 @@ const Home = () => {
             {home_data1.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start  space-x-4 "
+                className="flex items-start  space-x-4  "
                 variants={animateTextChild}
                 custom={index}
               >
-                <div className="bg-tertiary rounded-full p-4">
+                <div className="bg-tertiary rounded-full p-4 ">
                   <Image
                     src={item.img}
                     alt={item.title}
@@ -123,10 +123,10 @@ const Home = () => {
 
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-36">
-          <div className="relative place-content-center">
+          <div className="relative place-content-center ">
             <div className="relative">
                <motion.div
-        className="absolute -top-10 -left-5 w-60 h-60 -z-10 blur-[40px]"
+        className="absolute -top-5 -left-5 w-60 h-60 -z-10 blur-[40px]"
         style={{
           background:
             "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
@@ -140,7 +140,7 @@ const Home = () => {
 
       {/* Div 2 (opposite of Div 1) */}
       <motion.div
-        className="absolute bottom-20 right-10 w-60 h-60 -z-10 blur-[40px]"
+        className="absolute bottom-20 right-12 w-60 h-60 -z-10 blur-[40px]"
         style={{
           background:
             "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
@@ -181,8 +181,8 @@ const Home = () => {
 
       <BgWrapper>
         <ContainerWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10">
-            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[500px] ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:pt-24 lg:pb-8 xl:pt-28 xl:pb-10 ">
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[500px]  ">
               <SectionHeading text="Branded QR Code in Your Customer location" />
               <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
               <div className="space-y-4">
