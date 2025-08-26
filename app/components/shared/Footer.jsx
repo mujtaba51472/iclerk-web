@@ -61,7 +61,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1"
+                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
                   >
                     {item.name}
                   </Link>
@@ -78,7 +78,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1"
+                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
                   >
                     {item.name}
                   </Link>
