@@ -7,6 +7,7 @@ import {
   animateImage,
   animateTextChild,
   animateTextParent,
+  fadeInGradient,
 } from "@/app/utils/animate";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -124,29 +125,41 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 lg:py-24 xl:py-36">
           <div className="relative place-content-center">
             <div className="relative">
-              <div
-                className="  absolute -top-10 -left-5 w-60 h-60 opacity-100 -z-10 blur-[50px]"
-                style={{
-                  background:
-                    "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
-                }}
-              ></div>
+               <motion.div
+        className="absolute -top-10 -left-5 w-60 h-60 -z-10 blur-[40px]"
+        style={{
+          background:
+            "radial-gradient(circle, hsla(188, 81%, 52%, 0.8) 70%, hsla(188, 81%, 52%, 0.4) 100%, hsla(188, 81%, 52%, 0) 100%)",
+        }}
+        variants={fadeInGradient}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
+        transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
+      />
 
-              <div
-                className="absolute -bottom-5 right-0 w-60 h-60 opacity-60 -z-10 blur-[50px]"
-                style={{
-                  background:
-                    "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
-                }}
-              ></div>
+      {/* Div 2 (opposite of Div 1) */}
+      <motion.div
+        className="absolute bottom-20 right-10 w-60 h-60 -z-10 blur-[40px]"
+        style={{
+          background:
+            "radial-gradient(circle, hsla(254, 96%, 55%, 0.8) 70%, hsla(254, 96%, 55%, 0.4) 100%, hsla(254, 96%, 55%, 0) 100%)",
+        }}
+        variants={fadeInGradient}
+        initial="visible"   // opposite of Div1
+        whileInView="hidden" // hides when Div1 shows
+        viewport={{ once: true, margin: "-50% 0px -50% 0px" }}
+        transition={{ duration: 0.5, ease: "easeOut" , repeat: Infinity , repeatType: "reverse" , repeatDelay: .5 }}
+      />
 
               <div className="">
+               
                 <Image
                   src="/assets/home/chooseus.png"
                   alt="Choose Us"
                 width={550}
                   height={600}
-                  className=""
+                  className="z-10"
                 />
               </div>
             </div>
@@ -248,7 +261,7 @@ const Home = () => {
                     src={client}
                     alt="home image"
                     width={90}
-                    height={100}
+                    height={60}
                   />
                 </div>
               ))}
