@@ -12,7 +12,7 @@ const InterfaceComponent = () => {
   return (
     <BgWrapper>
 
-      <div className="container mx-auto px-4 pb-10">
+      <div className="container mx-auto   mt-24 py-10">
        <div className="py-10 max-w-3xl mx-auto">
          <div className="text-sm text-center mb-5 font-semibold">
           130+ CUSTOMERS

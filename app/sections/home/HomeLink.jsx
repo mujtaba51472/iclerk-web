@@ -4,7 +4,7 @@ import React from 'react'
 
 const HomeLink = ({text , redirect}) => {
   return (
-    <Link href={redirect} className=' flex font-bold  gap-2 text-primary text-sm '>{text} <MoveRight className='text-secondary' /></Link>
+    <Link href={redirect} className=' flex font-bold  gap-2 text-primary text-base '>{text} <MoveRight className='text-secondary' /></Link>
   )
 }
 

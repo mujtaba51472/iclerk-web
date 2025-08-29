@@ -111,6 +111,8 @@
     font-size: 1.125rem;
   }
 
+
+
   p {
     color: var(--color-text-light);
     margin-bottom: 1rem;
@@ -140,14 +142,8 @@
 
 
 
-
-
-
-
-
-  
   .container {
-    @apply !max-w-[1400px] !mx-auto !px-4;
+    @apply !max-w-[1400px] !mx-auto px-4;
   }
   .container-sm {
     @apply !max-w-3xl !mx-auto !px-4;
@@ -369,3 +365,5 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
+
+
