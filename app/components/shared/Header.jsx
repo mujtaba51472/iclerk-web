@@ -1,12 +1,11 @@
 "use client";
 import { headerTitles } from "@/app/config/HeaderTitle";
 import Link from "next/link";
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown, ChevronDownIcon, Menu, X } from "lucide-react";
 import Image from "next/image";
 import SecondaryButton from "./SecondaryButton";
 import { usePathname } from "next/navigation";
-
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +16,18 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   return (
     <>
-      <div className=" bg-white py-4 sticky top-0 z-50">
-        <div className="container mx-auto  flex justify-between items-center">
+      <div className="bg-white py-4 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center">
           <div className="text-xl font-bold">
             <Link href="/">
               <Image
@@ -29,18 +36,17 @@ const Header = () => {
                 width={100}
                 height={50}
               />
-              </Link>
+            </Link>
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
-
           <nav className="hidden lg:flex items-center space-x-10">
             {headerTitles.map((item, i) => (
               <div
                 key={i}
                 className="relative group"
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseEnter={() => handleMouseEnter(i)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
@@ -48,41 +54,44 @@ const Header = () => {
                 >
                   <div className="flex items-center">
                     <span
-                      className={`$ {
-                        pathname == item?.href && "text-tertiary"
-                      } text-base font-medium`}
+                      className={`${
+                        pathname === item?.href ? "text-tertiary" : ""
+                      } text-sm font-medium`}
                     >
                       {item.name}
                     </span>
                     {item?.submenu && (
                       <span className="mx-1 inline-block">
-                        <ChevronDownIcon />
+                        <ChevronDownIcon 
+                          className={`transition-transform duration-200 ${
+                            hoveredIndex === i ? 'rotate-180' : ''
+                          }`}
+                        />
                       </span>
                     )}
                   </div>
                 </Link>
-                {/* Submenu - keep it inside the same parent div */}
+                
+                {/* Submenu with better positioning */}
                 {item?.submenu && hoveredIndex === i && (
-                  <div
-                    className="absolute -left-5 top-full mt-[5px] w-48 bg-white shadow-lg rounded-md py-2 z-50"
-                    onMouseEnter={() => setHoveredIndex(i)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  >
-                    {item.submenu.map((sub, j) => (
-                      <Link
-                        key={j}
-                        href={sub.href}
-                        className="block px-4 py-2 text-primary hover:bg-gray-100 hover:text-tertiary transition-colors duration-200"
-                      >
-                        {sub.name}
-                      </Link>
-                    ))}
+                  <div className="absolute -left-5 top-full pt-2 w-48 z-50">
+                    <div className="bg-white shadow-lg rounded-md py-2 border border-gray-100">
+                      {item.submenu.map((sub, j) => (
+                        <Link
+                          key={j}
+                          href={sub.href}
+                          className="block text-sm px-4 py-2 text-primary hover:bg-gray-100 hover:text-tertiary transition-colors duration-200"
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
             ))}
             <SecondaryButton>
-              <Link href="/contact-us" className="text-white text-base font-medium">
+              <Link href="/contact-us" className="text-white text-sm font-medium">
                 Contact Us
               </Link>
             </SecondaryButton>
@@ -107,7 +116,7 @@ const Header = () => {
         lg:hidden
       `}
       >
-        <div className="container mx-auto px-4 py-6 shadow-sm h-full ">
+        <div className="container mx-auto px-4 py-6 shadow-sm h-full">
           <div className="flex justify-between items-center mb-8">
             <div className="text-xl font-bold">Logo</div>
             <button className="p-2 text-primary" onClick={toggleDrawer}>
@@ -133,7 +142,7 @@ const Header = () => {
       {/* Overlay - Only visible when drawer is open */}
       {isOpen && (
         <div
-          className="fixed inset-0   bg-opacity-50 z-30 lg:hidden"
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
           onClick={toggleDrawer}
         />
       )}

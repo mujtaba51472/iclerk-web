@@ -44,7 +44,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
+                    className="hover: transition-colors duration-300 block py-1 text-sm "
                   >
                     {item.name}
                   </Link>
@@ -61,7 +61,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
+                    className="hover: transition-colors duration-300 block py-1 text-sm "
                   >
                     {item.name}
                   </Link>
@@ -78,7 +78,7 @@ function Footer() {
                 <div key={index}>
                   <Link
                     href={item.href}
-                    className="hover: transition-colors duration-300 block py-1 text-sm font-semibold"
+                    className="hover: transition-colors duration-300 block py-1 text-sm "
                   >
                     {item.name}
                   </Link>
@@ -89,7 +89,7 @@ function Footer() {
 
           {/* Newsletter */}
           <div className="lg:col-span-1">
-            <h3 className="font-semibold  mb-4 text-lg">Subscribe to our newsletter</h3>
+            <h3 className="  mb-4 text-lg">Subscribe to our newsletter</h3>
             <p className="mb-4 text-sm">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>
