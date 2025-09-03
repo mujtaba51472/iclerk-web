@@ -5,8 +5,9 @@ import { home_data2 } from "./data";
 import { motion, AnimatePresence } from "framer-motion";
 import BgWrapper from "@/app/components/shared/BgWrapper";
 import BannerHeading from "@/app/components/shared/BannerHeading";
+import SectionHeading from "@/app/components/shared/Heading";
 
-const InterfaceComponent = () => {
+const InterfaceComponent = ({data, title, heading}) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -14,19 +15,19 @@ const InterfaceComponent = () => {
 
       <div className="container mx-auto   mt-24 py-10">
        <div className="py-10 max-w-3xl mx-auto">
-         <div className="text-sm text-center mb-5 font-semibold">
-          130+ CUSTOMERS
-        </div>
-        <div className="text-center text-2xl md:text-4xl font-bold text-primary">
-          A smart interface <br /> and strong backend control
+         <div className="text-base text-secondary text-center  font-semibold">
+           {title}
+         </div>
+        <div className="max-w-lg text-center mx-auto">
+          <SectionHeading text={heading} />
         </div>
 
        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-10 bg-transparent py-5">
+        <div className="grid md:grid-cols-3 gap-8  bg-transparent py-5">
           {/* LEFT SIDE LIST */}
           <div className="flex flex-col space-y-10 ">
-            {home_data2.map((item, index) => (
+            {data.map((item, index) => (
               <div
                 key={index}
                 onClick={() => setActiveIndex(index)} 
@@ -59,7 +60,7 @@ const InterfaceComponent = () => {
           </div>
 
           {/* RIGHT SIDE IMAGE DISPLAY */}
-          <HomeImageDisplay data={home_data2[activeIndex]} index={activeIndex} />
+          <HomeImageDisplay data={data[activeIndex]} index={activeIndex} />
         </div>
       </div>
     </BgWrapper>

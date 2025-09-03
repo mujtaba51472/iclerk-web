@@ -2,13 +2,15 @@
 import { headerTitles } from "@/app/config/HeaderTitle";
 import Link from "next/link";
 import React, { use, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, ChevronDownIcon, Menu, X } from "lucide-react";
 import Image from "next/image";
 import SecondaryButton from "./SecondaryButton";
 import { usePathname } from "next/navigation";
 
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const pathname = usePathname();
 
   const toggleDrawer = () => {
@@ -20,38 +22,67 @@ const Header = () => {
       <div className=" bg-white py-4 sticky top-0 z-50">
         <div className="container mx-auto  flex justify-between items-center">
           <div className="text-xl font-bold">
-            <Image
-              src="/assets/logo/logo.png"
-              alt="Logo"
-              width={100}
-              height={50}
-            />
+            <Link href="/">
+              <Image
+                src="/assets/logo/logo.png"
+                alt="Logo"
+                width={100}
+                height={50}
+              />
+              </Link>
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
+
           <nav className="hidden lg:flex items-center space-x-10">
-            {headerTitles.map((item , i) => (
-              <Link
+            {headerTitles.map((item, i) => (
+              <div
                 key={i}
-                href={item.href}
-                className="relative no-underline text-primary font-medium hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+                className="relative group"
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                <span
-                  className={`${
-                    pathname == item?.href && "text-tertiary "
-                  } text-base font-medium `}
+                <Link
+                  href={item.href}
+                  className="relative no-underline text-primary font-medium hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
-                  {item.name}
-                </span>
-                {item.submenu && (
-                  <span className="mx-1 inline-block">
-                    <KeyboardArrowDownIcon />
-                  </span>
+                  <div className="flex items-center">
+                    <span
+                      className={`$ {
+                        pathname == item?.href && "text-tertiary"
+                      } text-base font-medium`}
+                    >
+                      {item.name}
+                    </span>
+                    {item?.submenu && (
+                      <span className="mx-1 inline-block">
+                        <ChevronDownIcon />
+                      </span>
+                    )}
+                  </div>
+                </Link>
+                {/* Submenu - keep it inside the same parent div */}
+                {item?.submenu && hoveredIndex === i && (
+                  <div
+                    className="absolute -left-5 top-full mt-[5px] w-48 bg-white shadow-lg rounded-md py-2 z-50"
+                    onMouseEnter={() => setHoveredIndex(i)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    {item.submenu.map((sub, j) => (
+                      <Link
+                        key={j}
+                        href={sub.href}
+                        className="block px-4 py-2 text-primary hover:bg-gray-100 hover:text-tertiary transition-colors duration-200"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              </Link>
+              </div>
             ))}
             <SecondaryButton>
-              <Link href="/contact" className="text-white text-base font-medium">
+              <Link href="/contact-us" className="text-white text-base font-medium">
                 Contact Us
               </Link>
             </SecondaryButton>
