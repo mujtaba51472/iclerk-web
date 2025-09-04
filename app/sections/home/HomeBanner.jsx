@@ -6,11 +6,11 @@ const HomeBanner = () => {
   return (
  <div
         className={`bg-[url('/assets/home/homebg.png')]
-        } relative  bg-no-repeat bg-cover max-w-full bg-center    relative min-h-[640px] flex items-center z-10 `}
+        } relative  bg-no-repeat bg-cover max-w-full bg-center    relative min-h-[650px] flex items-center z-10 `}
       >
         <div className="container !px-4">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  relative z-10">
-            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[600px] xl:max-w-[800px]">
               <div
                 className={`text-primary font-bold text-3xl sm:text-3xl lg:text-[50px] xl:[64px]  sm:leading-[1.3] lg:leading-[120%] `}
               >
@@ -24,15 +24,15 @@ const HomeBanner = () => {
                 <Image
                   src="/assets/home/home3.webp"
                   alt="Background Image"
-                  width={400}
+                  width={300}
                   height={500}
                   className=""
                 />
               </div>
               <div>
-                <div className="pr-0 md:pr-4 lg:pr-0 max-w-[500px]">
+                <div className="pr-2 md:pr-4 lg:pr-0 max-w-[300px] md:mb-10 lg:mb-0 lg:max-w-[400px] ">
                   <button
-                    className=" py-3 lg:py-6 flex cursor-pointer group items-center justify-between text-lg md:text-2xl lg:text-3xl font-bold rounded-[75px]  w-full hover:shadow-2xl transition-all duration-300 group"
+                    className=" py-3 lg:py-6 flex cursor-pointer group items-center justify-between text-lg md:text-2xl lg:text-3xl font-bold rounded-[75px]  w-full shadow-2xl transition-all duration-300 group"
                     style={{
                       background:
                         "linear-gradient(270deg, hsla(188, 81%, 52%, 1) 4.04%, hsla(0, 0%, 100%, 0) 84.39%)",
@@ -51,7 +51,7 @@ const HomeBanner = () => {
                       alt="Arrow Right"
                       width={40}
                       height={40}
-                      className=" mx-2 group-hover:translate-x-1 group-hover:scale-125 transition-all duration-300"
+                      className=" mx-2 "
                     />
                   </button>
                 </div>
