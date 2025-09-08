@@ -8,6 +8,8 @@ const TaxiBookerBanner = () => {
         className={`bg-[url('/assets/taxibooker/taxibanner.webp')]
         } relative  bg-no-repeat bg-cover max-w-full bg-center overflow-hidden    relative min-h-[650px] flex items-center z-10 `}
       >
+                <div className='h-full w-full bg-gradient-to-b from-tertiary/70 to-transparent absolute inset-0' />
+
         <div className="container !px-4">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  relative z-10">
             <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">

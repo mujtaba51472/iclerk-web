@@ -11,9 +11,9 @@ const InterfaceComponent = ({data, title, heading}) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <BgWrapper>
+    <div className="bg-[#F8FAFC] container mt-10 ">
 
-      <div className="container mx-auto   mt-24 py-10">
+      <div className="container mx-auto    py-10">
        <div className="py-10 max-w-3xl mx-auto">
          <div className="text-base text-secondary text-center  font-semibold">
            {title}
@@ -63,7 +63,7 @@ const InterfaceComponent = ({data, title, heading}) => {
           <HomeImageDisplay data={data[activeIndex]} index={activeIndex} />
         </div>
       </div>
-    </BgWrapper>
+    </div>
   );
 };
 

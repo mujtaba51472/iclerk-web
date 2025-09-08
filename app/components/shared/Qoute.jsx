@@ -5,7 +5,7 @@ import Paragraph from './Paragraph'
 
 const Quote = () => {
   return (
-  <ContainerWrapper className='mt-24'>
+  <ContainerWrapper className='mt-2'>
         <div className="rounded-md overflow-hidden">
           <div className="bg-[url('/assets/home/bghome1.webp')] rounded-md bg-cover bg-center bg-no-repeat min-h-[500px]  flex items-center justify-center">
             <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-5xl mx-auto  ">

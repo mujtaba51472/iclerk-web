@@ -45,9 +45,9 @@ const CardReaderMain = () => {
             </div>
           </div>
         </ContainerWrapper>
-        <BgWrapper>
+        <BgWrapper rotate={true} className={"mt-16"} >
 
-             <ContainerWrapper className="mt-24">
+             <ContainerWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
            <div className=" relative ">
               <Image

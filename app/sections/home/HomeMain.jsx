@@ -3,9 +3,7 @@ import BgWrapper from "@/app/components/shared/BgWrapper";
 import ContainerWrapper from "@/app/components/shared/ContainerWrapper";
 import DesktopComp from "@/app/components/shared/DesktopComp";
 import Quote from "@/app/components/shared/Qoute";
-import {
-  animateTextChild
-} from "@/app/utils/animate";
+import { childBannerContainer, parentContainer } from "@/app/utils/animate";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import SectionHeading from "../../components/shared/Heading";
@@ -16,6 +14,7 @@ import HomeBanner from "./HomeBanner";
 import HomeLink from "./HomeLink";
 import HomeList from "./HomeList";
 import InterfaceComponent from "./InterfaceComponent";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -24,15 +23,18 @@ const Home = () => {
 
       <div className="bg-[#F8FAFC]">
         <ContainerWrapper>
-          <div
+          <motion.div
+            variants={parentContainer}
+                initial="hidden"
+      animate="visible"
             className="flex items-center justify-between flex-wrap  py-8"
-            viewport={{ once: true }}
           >
             {home_data1.map((item, index) => (
-              <div
+              <motion.div
+               
                 key={index}
                 className="flex items-start  space-x-4  "
-                variants={animateTextChild}
+                variants={childBannerContainer}
                 custom={index}
               >
                 <div className="bg-tertiary rounded-full p-4 ">
@@ -44,38 +46,40 @@ const Home = () => {
                   />
                 </div>
                 <div className="max-w-[300px] pt-2 ">
-                  <Paragraph  text={item.title} />
+                  <Paragraph text={item.title} />
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </ContainerWrapper>
       </div>
- <ContainerWrapper className=' mt-28 lg:mt-36'>
+      <ContainerWrapper className=" mt-28 lg:mt-36">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4  ">
-               <DesktopComp img="/assets/home/chooseus.png"/>
+          <DesktopComp img="/assets/home/chooseus.png" />
 
           <div className="place-content-center justify-self-end space-y-2 lg:space-y-4 max-w-[400px] ">
-
             <div className="text-primary text-2xl lg:text-4xl font-bold">
               Why Choose <br /> iClerk?
             </div>
 
-            <Paragraph white={true} text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses." />
+            <Paragraph
+              white={true}
+              text="iClerk is a comprehensive, cloud-based dispatch and booking system designed to simplify operations for taxi businesses."
+            />
 
             <div className="mt-6">
               <HomeLink text="Learn More" redirect="#" />
             </div>
           </div>
         </div>
-      </ContainerWrapper>    
-      
-<BgWrapper>
- <ContainerWrapper className='mt-24'>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex py-10  ">
+      </ContainerWrapper>
+
+      <BgWrapper className="mt-16">
+        <ContainerWrapper >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex py-20  ">
             <div className="place-content-center  space-y-2 lg:space-y-4  max-w-[400px]   ">
               <SectionHeading text="Branded QR Code in Your Customer location" />
-              <Paragraph  text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
+              <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
               <div className="space-y-2">
                 <HomeList text="Compatible with all major browsers" />
                 <HomeList text="Fully integrated with iCabbi dispatch system" />
@@ -89,15 +93,15 @@ const Home = () => {
               <Image
                 src="/assets/home/homeqr.png"
                 alt="Choose Us"
-              width={500}
+                width={500}
                 height={600}
               />
             </div>
           </div>
         </ContainerWrapper>
       </BgWrapper>
-      <ContainerWrapper className='mt-24'>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ContainerWrapper className="!mt-16 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16">
           <div className="">
             <Image
               src="/assets/home/paysol.webp"
@@ -121,10 +125,14 @@ const Home = () => {
         </div>
       </ContainerWrapper>
 
-      <InterfaceComponent data={home_data2} title='130+ CUSTOMERS' heading='A smart interface and strong backend control' />
+      <InterfaceComponent
+        data={home_data2}
+        title="130+ CUSTOMERS"
+        heading="A smart interface and strong backend control"
+      />
 
-      <ContainerWrapper className='mt-24 '>
-        <div className="text-center  text-lg font-bold mb-10 capitalized shadow-x-lg text-gray-400">
+      <ContainerWrapper className="mt-16 pt-16 ">
+        <div className="text-center  text-lg font-bold mb-10  capitalized shadow-x-lg text-gray-400">
           Trusted by the world's leading businesses
         </div>
         <div className="overflow-hidden">
@@ -152,8 +160,8 @@ const Home = () => {
         </div>
       </ContainerWrapper>
 
-      <ContainerWrapper className='mt-24'>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <ContainerWrapper className="mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 ">
           <div className="">
             <Image
               src="/assets/home/payterminal.webp"
@@ -177,9 +185,9 @@ const Home = () => {
         </div>
       </ContainerWrapper>
 
-      <BgWrapper>
-      <ContainerWrapper className='mt-24'>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
+      <BgWrapper className={"mt-16"}>
+        <ContainerWrapper >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 ">
             <div className="place-content-center  space-y-2 lg:space-y-4  max-w-[400px]  ">
               <SectionHeading text="Generate Automatic PayLink" />
               <Paragraph text="Send personalized payment links via SMS, email, or messaging apps. Customers can pay instantly without registration" />
@@ -205,12 +213,10 @@ const Home = () => {
         </ContainerWrapper>
       </BgWrapper>
 
-      <ContainerWrapper className='mt-24'>
+      <ContainerWrapper className="mt-32">
         <TestimonialCards />
       </ContainerWrapper>
       <Quote />
-
-     
     </>
   );
 };

@@ -1,4 +1,58 @@
 
+
+export const parentContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+      delayChildren: 0.2,   // wait before starting children
+      staggerChildren: 0.3 // animate each item one by one
+    }
+  }
+};
+
+export const childContainer = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+}
+
+
+export const childBannerContainer = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+}
+
+export const childBannerGradient = {
+  hidden: { opacity: 0,  },
+  visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const animateCircleLoop = {
   // initial: "hidden",
   // whileInView: "visible",

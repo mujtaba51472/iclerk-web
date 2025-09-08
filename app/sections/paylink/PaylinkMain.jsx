@@ -14,8 +14,8 @@ const PaylinkMain = () => {
   return (
     <>
       <PaylinkBanner />
-      <ContainerWrapper className="mt-24 lg:mt-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <ContainerWrapper className="mt-24 lg:mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4  ">
           <div className="place-content-center space-y-2 lg:space-y-4  max-w-[450px]   ">
             <Paragraph
               className="!text-secondary font-semibold"
@@ -29,14 +29,14 @@ const PaylinkMain = () => {
 
         </div>
       </ContainerWrapper>
-      <BgWrapper>
-        <ContainerWrapper className="mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10  ">
+      <BgWrapper rotate={true} className="mt-16">
+        <ContainerWrapper >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16  ">
             <div className="relative">
               <Image
                 src="/assets/taxibooker/qrcode.webp"
                 alt="Choose Us"
-                width={700}
+                width={500}
                 height={300}
                 className="max-h-[400px] rounded-md"
               />
@@ -51,9 +51,9 @@ const PaylinkMain = () => {
             </div>
           </div>
         </ContainerWrapper>
-      </BgWrapper>
-      <ContainerWrapper className="mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
+      </BgWrapper >
+      <ContainerWrapper className="mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 ">
           <div className=" place-content-center  space-y-2 lg:space-y-4  max-w-[450px] ">
             <Paragraph
               className="!text-secondary font-semibold"
@@ -75,14 +75,14 @@ const PaylinkMain = () => {
           </div>
         </div>
       </ContainerWrapper>
-       <BgWrapper>
-        <ContainerWrapper className="mt-24">
+       <BgWrapper rotate={true} className="mt-16">
+        <ContainerWrapper >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10  ">
             <div className="relative">
               <Image
                 src="/assets/paylink/booking-recipet.webp"
                 alt="Choose Us"
-                width={600}
+                width={500}
                 height={300}
                 className="max-h-[400px] rounded-md"
               />

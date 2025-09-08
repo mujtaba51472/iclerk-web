@@ -16,7 +16,7 @@ const TaxiBookerMain = () => {
   return (
     <>
       <TaxiBookerBanner />
-      <ContainerWrapper className="mt-24 lg:mt-32">
+      <ContainerWrapper className="mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           <div className="place-content-center space-y-2 lg:space-y-4  max-w-[450px]   ">
             <Paragraph
@@ -26,14 +26,14 @@ const TaxiBookerMain = () => {
             <SectionHeading text="Lorem ipsum dolor sit amet, consecte" />
             <Paragraph text="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
           </div>
-           <DesktopComp className='!mt-10' right={true} img="/assets/taxibooker/taxipc.png"/>
+           <DesktopComp className='!mt-16' right={true} img="/assets/taxibooker/taxipc.png"/>
 
         </div>
       </ContainerWrapper>
 
-      <BgWrapper>
-        <ContainerWrapper className="mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10  ">
+      <BgWrapper className={"mt-16"} rotate={true}>
+        <ContainerWrapper className="">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16   ">
             <div className=" relative ">
               <Image
                 src="/assets/taxibooker/qrcode.webp"
@@ -79,7 +79,7 @@ const TaxiBookerMain = () => {
           </div>
         </ContainerWrapper>
       </BgWrapper>
-      <ContainerWrapper className="mt-24">
+      <ContainerWrapper className="mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
          
             <div className=" place-content-center  space-y-2 lg:space-y-4  max-w-[450px] ">
@@ -124,8 +124,8 @@ const TaxiBookerMain = () => {
 
 
       <>
-        <ContainerWrapper className="mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10  ">
+        <ContainerWrapper className="mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16  ">
             <div className=" relative ">
               <Image
                 src="/assets/taxibooker/qronboard.webp"
@@ -162,10 +162,10 @@ const TaxiBookerMain = () => {
             </div>
           </div>
         </ContainerWrapper>
-      <BgWrapper>
+      <BgWrapper className={"mt-16"} >
 
-           <ContainerWrapper className="mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
+           <ContainerWrapper >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-1 ">
          
             <div className=" place-content-center  space-y-2 lg:space-y-4  max-w-[450px] ">
               <Paragraph

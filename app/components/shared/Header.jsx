@@ -1,17 +1,27 @@
 "use client";
 import { headerTitles } from "@/app/config/HeaderTitle";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronDownIcon, Menu, X } from "lucide-react";
 import Image from "next/image";
 import SecondaryButton from "./SecondaryButton";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import {parentContainer, childContainer } from "@/app/utils/animate";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 10);
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -26,8 +36,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white py-4 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
+      <div className={` bg-white py-4 sticky top-0 z-50 ${scrolled ? " shadow-md " : "bg-white"}`}>
+        <motion.div
+          variants={parentContainer}
+          initial="hidden"
+          animate="visible"
+          className="container mx-auto flex justify-between items-center"
+        >
           <div className="text-xl font-bold">
             <Link href="/">
               <Image
@@ -38,19 +53,19 @@ const Header = () => {
               />
             </Link>
           </div>
-
           {/* Desktop Navigation - Hidden on mobile */}
-          <nav className="hidden lg:flex items-center space-x-10">
+          <nav    className="hidden lg:flex items-center space-x-10">
             {headerTitles.map((item, i) => (
-              <div
+              <motion.div
                 key={i}
+                variants={childContainer}
                 className="relative group"
                 onMouseEnter={() => handleMouseEnter(i)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
-                  className="relative no-underline text-primary font-medium hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className=" relative no-underline text-primary font-medium hover:text-tertiary after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[3px] after:bg-tertiary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   <div className="flex items-center">
                     <span
@@ -72,10 +87,9 @@ const Header = () => {
                   </div>
                 </Link>
                 
-                {/* Submenu with better positioning */}
                 {item?.submenu && hoveredIndex === i && (
-                  <div className="absolute -left-5 top-full pt-2 w-48 z-50">
-                    <div className="bg-white shadow-lg rounded-md py-2 border border-gray-100">
+                  <div className="absolute -left-5 top-full pt-2 w-72 z-50">
+                    <div className="bg-white shadow-lg rounded-md py-2 border border-gray-200 ">
                       {item.submenu.map((sub, j) => (
                         <Link
                           key={j}
@@ -88,13 +102,16 @@ const Header = () => {
                     </div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
+              <motion.div variants={childContainer}>
             <SecondaryButton>
               <Link href="/contact-us" className="text-white text-sm font-medium">
                 Contact Us
               </Link>
             </SecondaryButton>
+              </motion.div>
+
           </nav>
 
           {/* Mobile Menu Button - Visible only on mobile */}
@@ -105,8 +122,8 @@ const Header = () => {
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+        </motion.div>
         </div>
-      </div>
 
       {/* Mobile Drawer */}
       <div

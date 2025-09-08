@@ -3,7 +3,7 @@ import React from 'react'
 
 const HomeList = ({text , className}) => {
   return (
-            <div className={`leading-relaxed text-[14px] text-[#12141D] opacity-70 lg:text-[16px] ${className}`}> <div className='inline-flex '><Check className='text-white  bg-secondary rounded-full' size={16} /></div> {text}</div>
+            <div className={`leading-relaxed text-[14px] text-primary/90  lg:text-[16px] ${className}`}> <div className='inline-flex '><Check className='text-white  bg-secondary rounded-full' size={16} /></div> {text}</div>
 
   )
 }
