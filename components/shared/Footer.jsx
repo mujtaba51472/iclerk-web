@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { company } from "../../config/company";
-import { navigation } from "@/app/config/footerTitle";
+import { navigation } from "@/config/footerTitle";
 import { Facebook, Linkedin } from "lucide-react";
 import ContainerWrapper from "./ContainerWrapper";
 

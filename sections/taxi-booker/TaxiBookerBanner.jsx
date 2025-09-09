@@ -1,38 +1,38 @@
-import BannerParagraph from '@/app/components/shared/BannerParagraph'
+import BannerParagraph from '@/components/shared/BannerParagraph'
 import Image from 'next/image'
 import React from 'react'
 
-const CardReaderBanner = () => {
+const TaxiBookerBanner = () => {
   return (
  <div
-        className={`bg-[url('/assets/card-reader/cardbanner.webp')]
-        } relative   bg-no-repeat bg-cover max-w-full bg-center overflow-hidden    relative min-h-[650px] flex items-center z-10 `}
+        className={`bg-[url('/assets/taxibooker/taxibanner.webp')]
+        } relative  bg-no-repeat bg-cover max-w-full bg-center overflow-hidden    relative min-h-[650px] flex items-center z-10 `}
       >
-                        <div className='h-full w-full bg-gradient-to-b from-tertiary/70 to-transparent absolute inset-0' />
+                <div className='h-full w-full bg-gradient-to-b from-tertiary/70 to-transparent absolute inset-0' />
 
         <div className="container !px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8  relative z-10">
-            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[400px]  xl:max-w-[800px]">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  relative z-10">
+            <div className="place-content-center space-y-4 lg:space-y-8 max-w-[350px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[800px]">
               <div
                 className={`text-primary font-bold text-3xl sm:text-3xl lg:text-[50px] xl:[64px]  sm:leading-[1.3] lg:leading-[120%] `}
               >
-                Intelligent <br /> in-car payment <br /> solutions
+                Secure & <br /> Contactless Payment acceptance
               </div>
 
               <div>
-                <BannerParagraph text="Accept all major credit/debit in-car using QR Code, our Intelligent QR Code will show taxi fare and customer details every time customer scan the same QR Code." />
+                <BannerParagraph text="Easy to use payment acceptance from your customer with no hardware required." />
               </div>
-              <div className="lg:hidden  ">
+              <div className="xl:hidden">
                 <Image
-                  src="/assets/card-reader/cardhero1.webp"
+                  src="/assets/taxibooker/taxi-hero.webp"
                   alt="Background Image"
-                  width={250}
+                  width={300}
                   height={500}
-                  className='md:h-[300px] md:w-[400px] w-auto '
+                  className=""
                 />
               </div>
               <div>
-                <div className="pr-2 md:pr-4 lg:pr-0 max-w-[300px] md:mb-10 lg:mb-0 lg:max-w-[400px]">
+                <div className="pr-2 md:pr-4 lg:pr-0 max-w-[300px] mt-10 lg:max-w-[400px] ">
                   <button
                     className=" py-3 lg:py-6 flex cursor-pointer group items-center justify-between text-lg md:text-2xl lg:text-3xl font-bold rounded-[75px]  w-full shadow-2xl transition-all duration-300 group"
                     style={{
@@ -45,7 +45,7 @@ const CardReaderBanner = () => {
                     }}
                   >
                     {" "}
-                    <span className="text-primary  px-4 lg:px-6 group-hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-primary  px-2 lg:px-6 group-hover:-translate-y-1 transition-all duration-300">
                       Book a Demo
                     </span>
                     <Image
@@ -53,7 +53,7 @@ const CardReaderBanner = () => {
                       alt="Arrow Right"
                       width={40}
                       height={40}
-                      className=" mx-2 "
+                      className=" mx-2  "
                     />
                   </button>
                 </div>
@@ -61,16 +61,16 @@ const CardReaderBanner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 lg:top-12 xl:-top-10 -right-18   2xl:right-0 hidden lg:block  lg:pt-10">
+        <div className="absolute top-0 right-0 hidden xl:block  lg:pt-10">
           <Image
-            src="/assets/card-reader/cardhero1.webp"
+            src="/assets/taxibooker/taxi-hero.webp"
             alt="Background Image"
-            width={700}
+            width={850}
             height={700}
-            className="h-[500px] xl:h-[700px] w-auto"
+            className=""
           />
         </div>
       </div>  )
 }
 
-export default CardReaderBanner
+export default TaxiBookerBanner

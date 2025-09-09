@@ -1,4 +1,4 @@
-import Home from "./sections/home/HomeMain";
+import Home from "../sections/home/HomeMain";
 
 
 

@@ -1,5 +1,5 @@
-import ContainerWrapper from '@/app/components/shared/ContainerWrapper'
-import Paragraph from '@/app/components/shared/Paragraph'
+import ContainerWrapper from '@/components/shared/ContainerWrapper'
+import Paragraph from '@/components/shared/Paragraph'
 import React from 'react'
 import HomeLink from './HomeLink'
 import Image from 'next/image'

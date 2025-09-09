@@ -1,13 +1,13 @@
 import React from 'react'
 import CardReaderBanner from './CardReaderBanner'
-import ContainerWrapper from '@/app/components/shared/ContainerWrapper'
-import Paragraph from '@/app/components/shared/Paragraph'
-import SectionHeading from '@/app/components/shared/Heading'
+import ContainerWrapper from '@/components/shared/ContainerWrapper'
+import Paragraph from '@/components/shared/Paragraph'
+import SectionHeading from '@/components/shared/Heading'
 import HomeList from '../HomeList'
 import HomeLink from '../HomeLink'
 import Image from 'next/image'
-import BgWrapper from '@/app/components/shared/BgWrapper'
-import Quote from '@/app/components/shared/Qoute'
+import BgWrapper from '@/components/shared/BgWrapper'
+import Quote from '@/components/shared/Qoute'
 
 const CardReaderMain = () => {
   return (

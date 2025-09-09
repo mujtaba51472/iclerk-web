@@ -3,9 +3,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { home_data2 } from "./data";
 import { motion, AnimatePresence } from "framer-motion";
-import BgWrapper from "@/app/components/shared/BgWrapper";
-import BannerHeading from "@/app/components/shared/BannerHeading";
-import SectionHeading from "@/app/components/shared/Heading";
+import BgWrapper from "@/components/shared/BgWrapper";
+import BannerHeading from "@/components/shared/BannerHeading";
+import SectionHeading from "@/components/shared/Heading";
 
 const InterfaceComponent = ({data, title, heading}) => {
   const [activeIndex, setActiveIndex] = useState(0);

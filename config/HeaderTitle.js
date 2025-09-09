@@ -20,8 +20,10 @@ export const headerTitles = [
         href: "/products/card-reader",
       },
     ],
-  },
-    {
+  }, {
+    name:'Pricing',
+    href:'/pricing'
+  }, {
     name: "Support",
     href: "/support",
   },

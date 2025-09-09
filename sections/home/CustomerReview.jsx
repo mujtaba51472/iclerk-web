@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import Paragraph from '@/app/components/shared/Paragraph';
+import Paragraph from '@/components/shared/Paragraph';
 
 const testimonials = [
   {

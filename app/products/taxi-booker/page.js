@@ -1,4 +1,4 @@
-import TaxiBookerMain from '@/app/sections/taxi-booker/TaxiBookerMain'
+import TaxiBookerMain from '@/sections/taxi-booker/TaxiBookerMain'
 import React from 'react'
 
 const page = () => {

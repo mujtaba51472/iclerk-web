@@ -1,4 +1,4 @@
-import CardReaderMain from '@/app/sections/home/card-reader-page/CardReaderMain'
+import CardReaderMain from '@/sections/home/card-reader-page/CardReaderMain'
 import React from 'react'
 
 const page = () => {

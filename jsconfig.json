@@ -17,13 +17,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/components/*": ["app/components/*"],
-      "@/components/shared/*": ["app/components/shared/*"],
-      "@/components/ui/*": ["app/components/ui/*"],
+      "@/components/*": ["components/*"],
+      "@/components/shared/*": ["components/shared/*"],
+      "@/components/ui/*": ["components/ui/*"],
       "@/app/*": ["app/*"],
       "@/public/*": ["app/public/*"],
-      "@/sections/*": ["app/sections/*"],
-      "@/config/*": ["app/config/*"]
+      "@/sections/*": ["sections/*"],
+      "@/config/*": ["config/*"]
     }
   },
   "include": [

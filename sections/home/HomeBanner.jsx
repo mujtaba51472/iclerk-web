@@ -1,5 +1,5 @@
 "use client";
-import BannerParagraph from "@/app/components/shared/BannerParagraph";
+import BannerParagraph from "@/components/shared/BannerParagraph";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -7,8 +7,8 @@ import {
   childBannerContainer,
   childBannerGradient,
   parentContainer,
-} from "@/app/utils/animate";
-import BookDemo from "@/app/components/shared/BookDemo";
+} from "@/utils/animate";
+import BookDemo from "@/components/shared/BookDemo";
 
 const HomeBanner = () => {
   const [showGradient, setShowGradient] = useState(false);

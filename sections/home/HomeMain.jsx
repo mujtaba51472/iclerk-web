@@ -1,9 +1,9 @@
 "use client";
-import BgWrapper from "@/app/components/shared/BgWrapper";
-import ContainerWrapper from "@/app/components/shared/ContainerWrapper";
-import DesktopComp from "@/app/components/shared/DesktopComp";
-import Quote from "@/app/components/shared/Qoute";
-import { childBannerContainer, parentContainer } from "@/app/utils/animate";
+import BgWrapper from "@/components/shared/BgWrapper";
+import ContainerWrapper from "@/components/shared/ContainerWrapper";
+import DesktopComp from "@/components/shared/DesktopComp";
+import Quote from "@/components/shared/Qoute";
+import { childBannerContainer, parentContainer } from "@/utils/animate";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import SectionHeading from "../../components/shared/Heading";
@@ -76,7 +76,7 @@ const Home = () => {
 
       <BgWrapper className="mt-16">
         <ContainerWrapper >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex py-20  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex py-10  ">
             <div className="place-content-center  space-y-2 lg:space-y-4  max-w-[400px]   ">
               <SectionHeading text="Branded QR Code in Your Customer location" />
               <Paragraph text="Instantly book a taxi or get a quote with your company's branded QR code - no app or tablet required." />
@@ -187,7 +187,7 @@ const Home = () => {
 
       <BgWrapper className={"mt-16"}>
         <ContainerWrapper >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
             <div className="place-content-center  space-y-2 lg:space-y-4  max-w-[400px]  ">
               <SectionHeading text="Generate Automatic PayLink" />
               <Paragraph text="Send personalized payment links via SMS, email, or messaging apps. Customers can pay instantly without registration" />
@@ -200,7 +200,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="justify-self-end">
+            <div className="justify-self-end mt-2">
               <Image
                 src="/assets/home/paylink.webp"
                 alt="Choose Us"

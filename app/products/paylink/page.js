@@ -1,4 +1,4 @@
-import PaylinkMain from '@/app/sections/paylink/PaylinkMain'
+import PaylinkMain from '@/sections/paylink/PaylinkMain'
 import React from 'react'
 
 const page = () => {

@@ -1,16 +1,16 @@
 import React from "react";
 import TaxiBookerBanner from "./TaxiBookerBanner";
-import ContainerWrapper from "@/app/components/shared/ContainerWrapper";
-import SectionHeading from "@/app/components/shared/Heading";
-import Paragraph from "@/app/components/shared/Paragraph";
+import ContainerWrapper from "@/components/shared/ContainerWrapper";
+import SectionHeading from "@/components/shared/Heading";
+import Paragraph from "@/components/shared/Paragraph";
 import HomeList from "../home/HomeList";
 import HomeLink from "../home/HomeLink";
 import Image from "next/image";
-import BgWrapper from "@/app/components/shared/BgWrapper";
-import Quote from "@/app/components/shared/Qoute";
+import BgWrapper from "@/components/shared/BgWrapper";
+import Quote from "@/components/shared/Qoute";
 import { taxibooker1 } from "./data";
 import InterfaceComponent from "../home/InterfaceComponent";
-import DesktopComp from "@/app/components/shared/DesktopComp";
+import DesktopComp from "@/components/shared/DesktopComp";
 
 const TaxiBookerMain = () => {
   return (
@@ -165,7 +165,7 @@ const TaxiBookerMain = () => {
       <BgWrapper className={"mt-16"} >
 
            <ContainerWrapper >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-1 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 ">
          
             <div className=" place-content-center  space-y-2 lg:space-y-4  max-w-[450px] ">
               <Paragraph
@@ -183,7 +183,7 @@ const TaxiBookerMain = () => {
               </div>
             </div>
 
-               <div className=" relative justify-self-end">
+               <div className=" relative  justify-self-end mt-2">
               <Image
                 src="/assets/taxibooker/webbooker.webp"
                 alt="Choose Us"
