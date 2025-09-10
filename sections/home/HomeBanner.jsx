@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
+  childBannerButton,
   childBannerContainer,
   childBannerGradient,
   parentContainer,
@@ -48,6 +49,7 @@ const HomeBanner = () => {
                 className=""
               />
             </div>
+
             <BookDemo />
             
           </div>

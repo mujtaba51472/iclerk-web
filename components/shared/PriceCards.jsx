@@ -1,5 +1,6 @@
 "use client";
 import { company } from "@/config/company";
+import { childBannerContainer, childBannerGradient, parentContainer } from "@/utils/animate";
 // import { fadeIn } from "../../../utils/animate";
 import { motion } from "framer-motion";
 import { CheckCircle, Square, SquareIcon } from "lucide-react";
@@ -18,15 +19,17 @@ export default function PricingCards({ data, marketing }) {
     return index === 1 ? "text-white" : "text-tertiary";
   };
   return (
-    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid gap-8 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div  className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <motion.div  variants={parentContainer}
+          initial="hidden"
+          animate="visible" className="max-w-7xl mx-auto grid gap-8 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {data?.map((plan, index) => (
           <motion.div
             style={{
               boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",
             }}
-            // {...fadeIn}
-            key={plan.name}
+          variants={childBannerGradient}
+            key={index}
             className={`rounded-3xl cursor-pointer overflow-hidden ${applyBorder(index)} ${index === 1 ? "bg-secondary text-white" : "bg-white text-gray-900"
               }`}
             initial={{ y: 0, boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
@@ -136,7 +139,7 @@ export default function PricingCards({ data, marketing }) {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { scale } from "framer-motion";
 
 
 export const parentContainer = {
@@ -20,8 +21,8 @@ export const childContainer = {
 
 
 export const childBannerContainer = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  hidden: { opacity: 0, scale: 0.9, y: -20 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }
 }
 
 export const childBannerGradient = {
@@ -29,6 +30,11 @@ export const childBannerGradient = {
   visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
 }
 
+
+export const childBannerButton = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+}
 
 
 

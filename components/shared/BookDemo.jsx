@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { childBannerContainer } from "@/utils/animate";
+import { childBannerButton } from "@/utils/animate";
 
 const BookDemo = () => {
-  return (
-    <motion.div variants={childBannerContainer} whileHover={{ y: -5 }}>
+  return (    
+    <motion.div variants={childBannerButton} whileHover={{ y: -5 }}>
       <div className=" border-l-4 rounded-[75px] border-tertiary  pr-2 md:pr-4 lg:pr-0 max-w-[300px] md:mb-10 lg:mb-0 lg:max-w-[400px] ">
         <button
           className=" py-3 lg:py-6 flex cursor-pointer group items-center justify-between text-lg md:text-2xl lg:text-3xl font-bold rounded-[75px]  w-full shadow-2xl transition-all duration-300 group"
